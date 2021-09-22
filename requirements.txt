@@ -1,0 +1,30 @@
+# first we have the core requirements
+# i.e. libraries used for running 
+# code in the notebooks per se
+#
+ipykernel
+ipywidgets
+nbautoeval
+
+# jupyter extensions
+#
+#rise
+#jupyter-contrib-nbextensions
+
+# this part is for readthedocs
+#
+Sphinx>=3.2
+# 1.6 is now out
+jupytext
+# work around a nasty error that said
+# AssertionError: wrong color format 'var(--jp-mirror-editor-variable-color)'
+pygments>=2.4.1
+ipypublish[sphinx]
+sphinx-rtd-theme
+jupyter_client
+calysto_bash
+# pin panflute to avoid this mysterious-looking error in readthedocs build
+# TypeError: ('invalid api version', [1, 17, 0, 5])
+panflute==1.12
+# jinja2.exceptions.UndefinedError: 'nbformat.notebooknode.NotebookNode object' has no attribute 'widgets'
+jinja2<3.0

@@ -4,7 +4,7 @@ parts:
 - caption: "git en local"
   chapters:
   - file: 1-01-git-local
-  - file: 3-good-practices
+  - file: 1-03-good-practices
   - file: 1-04-more-on-merging
   - file: 1-05-managing-changes
 - caption: "git en réseau"

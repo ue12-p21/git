@@ -168,7 +168,7 @@ Chacun pousse son commit dans le dépôt sur github; dans cette étape, arrangez
 
 +++
 
-Si vous avez des soucis pour pousser votre commit, revoyez dans le cours [le notebook sur le push](https://nbhosting.inria.fr/auditor/notebook/ue12-git:git/notebooks/2-02-synchro-push).
+Si vous avez des soucis pour pousser votre commit, revoyez dans le cours [le notebook sur le push](https://nbhosting.inria.fr/auditor/notebook/ue12-p21-git/notebooks/2-02-synchro-push).
 
 +++
 

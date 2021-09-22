@@ -5,8 +5,8 @@ author: Thierry Parmentelat
 logo: media/git-square.svg
 
 repository:
-  url: https://github.com/ue12/git
-  branch: master
+  url: https://github.com/ue12-p21/git
+  branch: main
   path_to_book: notebooks
 
 html:

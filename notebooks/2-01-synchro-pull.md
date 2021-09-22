@@ -128,12 +128,9 @@ dans notre cas, ce dépôt, c'est bien sûr celui sur github - ça pourrait êtr
 d'ailleurs pour vérifier on peut faire
 
 ```bash
-$ git config remote.origin.url
+$ git remote get-url origin
 https://github.com/ue12/git-sandbox
 ```
-
-ça se lit un peu comme ça : "montre moi l'URL du remote qui s'appelle *origin*"  
-mais bon, on vous avait bien dit que les commandes git peuvent être absconses…
 
 +++
 

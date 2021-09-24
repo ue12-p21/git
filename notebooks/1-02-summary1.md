@@ -56,7 +56,7 @@ version: '1.0'
 | `git commit` | créer un commit |
 | ￮￮￮￮￮￮￮￮￮￮￮￮ | ***les branches*** |
 | `git branch` | liste les branches connues |
-|  | `git branch newbranch commit` | 
+|  | `git branch newbranch <commit>` | 
 |  | pour créer une nouvelle branche | 
 | `git switch` | `git switch otherbranch` | 
 |              | change de branche, l'index et les fichiers |
@@ -73,8 +73,8 @@ version: '1.0'
 
 * **commit** : pendant la réalisation, le·a développeu·r·se créera des *commits* afin de "figer" l'état son travail à un instant donné. Il sera alors possible de naviguer entre ces *commits*, afin de revoir l'historique de développement, rechercher la source d'un bug, restaurer la version exacte déployée à un client etc.
 
-* **branche / *branch*** : une branche correpond juste à une étiquette vers un commit; la branche courante avance au fur et à mesure qu'on crée des commits.
-Notons que `git` permet de travailler sur plusieurs branches *en parallèle*: ainsi chaque développeur peut travailler sur sa propre version du code sans impacter les autres; la mise en commun se fera plus tard au moment de la *fusion* des branches.
+* **branche / *branch*** : une branche correpond juste à une étiquette vers un commit; la branche courante avance au fur et à mesure qu'on crée des commits;
+notons que `git` permet de travailler sur plusieurs branches *en parallèle*: ainsi chaque développeur peut travailler sur sa propre version du code sans impacter les autres; la mise en commun se fera plus tard au moment de la *fusion* des branches.
 
 * **fusion / *merge*** : typiquement on *fusionnera* la branche de travail d'un·e développeu·r·se sur la branche principale (`master`) afin d'y intégrer le résultat de son travail. Parfois l'outil n'y arrive pas tout seul (typiquement lorsque deux développeu·r·se·s ont modifié une même section de code) et on se trouve alors face à un **conflit** que l'on devra résoudre manuellement.
 

@@ -50,17 +50,16 @@ Le projet va être initié, à un instant, puis il va évoluer dans le temps au 
 
 Depuis que le code existe les programmeurs ont plusieurs problèmes, parmi les plus répandus:
 
-  - ne pas *perdre* les fichiers *localement* en les écrasant ou en les détruisant involontairement (oui on a tous fait cela au moins une fois...)
+- **ne pas *perdre* les fichiers** *localement* en les écrasant ou en les détruisant involontairement (oui, on a tous fait cela au moins une fois...)
 
+- **pouvoir *revenir* en arrière** dans des versions précédentes de vos fichiers;
+  Par exemple les évolutions que vous avez commencées sont cassées, c'était une mauvaise idée. Ou encore un de vos *clients* utilise une ancienne version du logiciel dont il est tellement content (la version est bien *stable*, les fonctionnalités lui suffisent) qu'il ne veut pas passer à la nouvelle version de votre logiciel ... mais il voudrait quand même, sur *sa* version, une petite modification. Le client est toujours exigeant. C'est d'ailleurs au moment où vous avez des utilisateurs que les ennuis commencent (mais heu non, on ne peut pas se passer des utilisateurs).
 
-- pouvoir *revenir* en arrière dans des versions précédentes de vos fichiers;
-Par exemple les évolutions que vous avez commencées sont cassées, c'était une mauvaise idée. Ou encore un de vos *clients* utilise une ancienne version du logiciel dont il est tellement content (la version est bien *stable*, les fonctionnalités lui suffisent) qu'il ne veut pas passer à la nouvelle version de votre logiciel ... mais il voudrait quand même, sur *sa* version, une petite modification. Le client est toujours exigeant. C'est d'ailleurs au moment où vous avez des utilisateurs que les ennuis commencent (mais heu non, on ne peut pas se passer des utilisateurs).
+- **travailler en équipe** (oui c'est parfois aussi un problème pour les développeurs...)
 
-- héberger vos projets à l'extérieur de leur ordinateurs (sur serveur distant, sur Internet, sur leur réseau local)
+- permettre à tout le monde d'utiliser leurs programmes, ou d'y apporter leur contribution, même **à des gens qu'on ne connait pas** a priori
 
-- travailler en équipe (oui c'est parfois aussi un problème pour les développeurs...)
-
-- permettre à tout le monde d'utiliser leurs programmes, ou d'y apporter leur contribution, même à des gens qu'on ne connait pas a priori
+- héberger un projet à l'extérieur de son ordinateur (sur serveur distant, sur Internet, sur le réseau local...)
 
 +++
 
@@ -71,15 +70,15 @@ Par exemple les évolutions que vous avez commencées sont cassées, c'était un
 Les programmeurs sont très souvent amenés à travailler en équipe sur un même projet. Il y
 a là plusieurs possibilités:
 
- 1. Les rôles sont bien séparés. Les personnes travaillent sur des fichiers complètement différents. Par exemple, l'un fait le code et l'autre fait la documentation. Rien de compliqué là pour gérer l'évolution de votre projet: les fichiers sont parfaitement séparés.
+ 1. les rôles sont bien séparés. Les personnes travaillent sur des fichiers complètement différents. Par exemple, l'un fait le code et l'autre fait la documentation. Rien de compliqué là pour gérer l'évolution de votre projet: les fichiers sont parfaitement séparés.
 
 
- 2. Les rôles sont moins bien séparés. Les personnes sont amenées à intervenir dans le même fichier à des endroits bien séparés. C'est un peu plus compliqué, mais ca reste possible, en effet: les modifications peuvent être fusionnées *automatiquement* dans un nouveau fichier, sans intervention de personne.
+ 2. les rôles sont moins bien séparés. Les personnes sont amenées à intervenir dans le même fichier à des endroits bien séparés. C'est un peu plus compliqué, mais ca reste possible; en effet, les modifications peuvent être fusionnées *automatiquement* dans un nouveau fichier, sans intervention de personne.
 
 
- 3. Vous vous en doutez: les personnes ont travaillé dans le même fichier aux mêmes endroits et leurs modifications se chevauchent (c'est fréquent voire habituel, ce n'est pas du tout un cas isolé provenant d'une configuration de travail dégénérée). Il n'est naturellement plus possible de construire automatiquement un fichier contenant le travail de ces personnes sans une intervention *humaine*. Nous ressentons alors le besoin de lister les différences entre les fichiers.
+ 3. vous vous en doutez: les personnes ont travaillé dans le même fichier aux mêmes endroits et leurs modifications se chevauchent (c'est fréquent voire habituel, ce n'est pas du tout un cas isolé provenant d'une configuration de travail dégénérée). Il n'est naturellement plus possible de construire automatiquement un fichier contenant le travail de ces personnes sans une intervention *humaine*. Nous ressentons alors le besoin de lister les différences entre les fichiers.
 
-Notons, qu'il peut vous arriver aussi, en travaillant *tout seul*, de travailler *en même temps* sur plusieurs souches  de votre code (on parlera alors de branches). Par exemple, vous avez cloisonné dans différentes branches de votre code la programmation de fonctionnalités très différentes. Pour *réconcilier* ensuite toutes ces branches, vous avez besoin vous aussi d'outils de *fusion automatique* des modifications, avec la même réserve lorsque deux branches ont eu un impact sur la même zone de code.
+Notons, qu'il peut vous arriver aussi, *même en travaillant seul*, de travailler *en même temps* sur plusieurs souches  de votre code (on parlera alors de branches). Par exemple, vous avez cloisonné dans différentes branches de votre code la programmation de fonctionnalités très différentes. Pour *réconcilier* ensuite toutes ces branches, vous avez besoin vous aussi d'outils de *fusion automatique* des modifications (et donc avec la même réserve, lorsque deux branches ont eu un impact sur la même zone de code).
 
 +++
 
@@ -118,9 +117,9 @@ Notre objectif pour l'instant est d'utiliser `git` **en local seulement**.
 
 Vous allez commencer la réalisation d'un petit projet logiciel:
 
-* Lancez un terminal `bash`
-* Créez le répertoire `my-first-project`
-* Allez dans ce répertoire.
+* lancez un terminal `bash`
+* créez le répertoire `my-first-project` (rappelez vous de la commande `mkdir`)
+* allez dans ce répertoire.
 
 On montre ci-dessous, les commandes shell à taper dans votre terminal. Notons que dans nos exemple nous omettrons le prompt `$` quand cela ne cause pas de confusion afin que vous puissiez copier les lignes en une seule fois pour les coller dans votre terminal (vous pouvez aussi tout re-taper mais c'est plus long et vous allez faire des typos). Et parfois nous mettrons le prompt `$`.
 
@@ -148,7 +147,7 @@ Il est très courant de mettre, dans un nouveau projet, un fichier de *readme* q
 
 Ca peut être un simple fichier de texte mais autant utiliser, pour ce que ce soit plus joli et plus *dans l'air du temps*, la syntaxe simple des fichiers *markdown*.
 
-On va créer un fichier `readme.md`. Notons qu'on va le faire dans ce notebook, de manière super simple en redirigeant un petit morceau de texte dans un fichier de nom `readme.md`. Mais vous pouvez aussi ouvrir `vs-code` et y éditez vos fichiers (attention à bien les mettre dans le répertoire `my-first-project` !
+On va donc créer un fichier `readme.md`; notons qu'on va le faire dans ce notebook, de manière super simple en redirigeant un petit morceau de texte dans un fichier de nom `readme.md`. Mais vous pouvez aussi ouvrir `vs-code` et y éditez vos fichiers (attention à bien les mettre dans le répertoire `my-first-project` !
 
 Nous allons faire un magnifique projet qui calcule la fonction factorielle, puisque la difficulé ici ne réside pas dans le code mais bien dans son organisation, restons simples.
 
@@ -199,22 +198,24 @@ git subcommand [options] [arguments]
 
 +++
 
-utilisons `git` pour connaître  la version de `git` qui est installée avec cette première sous-commande `version`
+pour commencer, on va afficher la version de `git` qui est installée avec cette première sous-commande `version`
 
 ```bash
 $ git version
-git version 2.17.1
+git version 2.30.1
 ```
 
 si vous n'avez pas exactement la même version, aucun souci, on n'utilisera aucune fonction avancée ni récente de `git`,  donc plus ou moins toutes les versions de `git` conviennent pour ce cours.
 
 +++
 
-## mise du répertoire en gestion de version (`git init`)
+## on transforme le dossier en dépôt (`git init`)
 
 +++
 
-On revient à notre répertoire. Nous y avons deux fichiers. Nous allons mettre ce répertoire "*sous gestion de version*" en l'initialisant comme *repository git* avec la commande `init` de `git`
+On revient à notre répertoire. Nous y avons deux fichiers. 
+
+Nous allons **transformer ce dossier en dépôt** (ou *repository*) en l'initialisant avec la commande `init` de `git`
 
 +++
 
@@ -225,7 +226,7 @@ Initialized empty Git repository in /home/alice/my-first-project/.git/
 
 +++
 
-Voila vous avez créé un dépôt (ou *repository*, ou encore on dira aussi parfois *repo*), un dépôt `git`, qui pour commencer est **vide**. Non, les fichiers du répertoire n'ont pas été mis automatiquement dedans !
+Voilà ,vous avez créé un dépôt (ou *repository*, ou encore on dira aussi parfois *repo*), un dépôt `git`, qui pour commencer est **vide**. Non, les fichiers du répertoire n'ont pas été mis automatiquement dedans !
 
 +++
 
@@ -241,7 +242,8 @@ git init --help
 
 +++ {"tags": ["level_intermediate"]}
 
-Souvent à ce stade les gens déjà exposés à l'informatique se demandent, mais bon sang mais qu'est-ce ça fait au juste ce `git init`; si c'est votre cas et pour satisfaire votre curiosité, tapez d'abord `ls` pour voir le contenu du dossier courant
+Souvent à ce stade, les gens déjà exposés à l'informatique se demandent: *mais bon sang mais qu'est-ce ça fait au juste ce `git init` ?*  
+si c'est votre cas et pour satisfaire votre curiosité, tapez d'abord `ls` pour voir le contenu du dossier courant
 
 ```bash
 $ ls
@@ -285,39 +287,42 @@ Ce message vous dit plusieurs choses que nous allons détailler.
 
 +++
 
+***
 ***On branch master***
 
 Dans un dépôt git, il y a toujours la notion de branche courante; on y reviendra, retenons pour l'instant qu'à la création du dépôt, on nous crée une branche qui s'appelle toujours `master`, et qui est la branche courante 
 
-**note**: depuis quelque temps, la branche créée par défaut s'appelle aussi parfois `main` et non pas `master`
+**note:**  depuis quelque temps, la branche créée par défaut  
+**s'appelle parfois `main`** et non pas `master`
 
 +++
 
+***
 ***No commits yet***
 
 Une autre information très intéressante: git vous dit que vous n'avez pas encore créé de **commit** !
 
 Faisons un peu de terminologie parce que `git` c'est super bien mais parfois un peu abscond, il faut s'habituer à son vocabulaire (donc on va insister un peu lourdement).
 
-Le **commit** désigne une *version enregistrée* du projet, une sorte de *sauvegarde* ou encore de *snapshot* (un instantané) de votre projet **tout entier** à un instant. Et oui: un **commit** réfère à **tous** les fichiers que vous avez mis sous la gestion de version initialisée dans ce répertoire !
+Le **commit** désigne une *version enregistrée* du projet, une sorte de *sauvegarde* ou encore de *snapshot* (un instantané) de votre projet **tout entier** à un instant (un peu comme le `backup1.zip` d'Alice dans les transparents)
 
-Bon là clairement on n'a encore rien mis sous gestion de version (vu qu'on n'a rien fait depuis l'initialisation). Donc on n'a pas de **commit** le **repo** est tout vide.
+Bon là clairement on n'a encore rien mis sous gestion de version (vu qu'on n'a rien fait depuis l'initialisation). Donc on n'a pas de **commit**, le **repo** est tout vide.
 
 +++
 
+***
 ***Untracked files***
 
 Il faut aussi savoir qu'un répertoire (dossier) sous gestion de version `git` peut contenir des fichiers *de brouillon*, que vous **ne voulez pas mettre** sous gestion de version (vous n'êtes pas obligés de mettre tous vos fichiers locaux dans votre dépôt !).
 
-C'est ce qu'on nous signale ici, nos deux fichiers sont à ce stade considérés comme *untracked*, évidemment puisqu'on n'a encore rien fait depuis l'initialisation de notre repo `git` local.
+C'est ce qu'on nous signale ici: nos deux fichiers sont, à ce stade, considérés comme *untracked*, évidemment puisqu'on n'a encore rien fait depuis l'initialisation de notre repo `git` local.
 
 Les fichiers (de votre répertoire courant) qui ne sont **pas sous gestion de version** sont appelés ***untracked*** et ils sont en **rouge**. Ici donc `licence.txt` et `readme.md`, on s'y attendait.
 
 +++
 
+***
 ***use "git add <file>..." to include in what will be committed***
-
-+++
 
 Enfin `git` nous dit que, pour ajouter des fichiers dans ce qui fera partie du prochain **commit** (*to include in what will be committed*) nous pouvons utiliser la commande `git add`.
 
@@ -371,25 +376,31 @@ vous devez voir :
 
 Maintenant on va créer notre premier **commit**.
 
++++
+
 Le principe du contenu d'un `git commit`:
 
 * il va contenir tout ce qu'il y avait dans le commit précédent (bon nous ici, c'est un contenu vide...),
 * plus ce qu'on a donné à la (ou les) commande(s) `git add` entretemps
 
-+++
-
 Dans notre cas donc, notre premier commit va contenir les deux fichiers.
 
-Il va nous falloir **fournir un message** qui explique à quoi correspond ce commit. Ce message est d'autant plus important qu'il va nous servir à repérer l'idée derrière ce commit (*pourquoi on l'a fait*). Nous reviendrons ultérieurement sur les bonnes pratiques pour rédiger ces messages, pour l'instant restons bêtement simple. Par exemple, nous allons mettre un message qui dit `licence+readme`.
++++
 
-Donc nous y voilà, `git` a une commande `commit` à laquelle on va indiquer le message avec l'argument `-m`.
+Il va nous falloir **fournir un message** qui explique à quoi correspond ce commit. Ce message est **d'autant plus important** qu'il va nous servir à repérer l'idée derrière ce commit (*pourquoi on l'a fait*). 
+Pour l'instant restons bêtement simple, par exemple nous allons mettre un message qui dit juste `licence+readme`.
+Nous reviendrons ultérieurement sur les bonnes pratiques pour rédiger ces messages, mais une chose à la fois...
 
-Notons qu'on peut aussi utiliser `git commit` sans l'argument `-m`. Auquel cas un éditeur
-va s'ouvrir pour saisir le message. Notez qu'on peut choisir (une bonne fois pour toutes)
-un autre éditeur comme par exemple `truc` avec la commande `git config --global
-core.editor "truc"`) .
+Donc nous y voilà, `git` a une commande `commit`, pour créer un commit; pour lui indiquer quel message mettre dans le commit, on peut soit :
 
-Depuis le notebook c'est plus simple de donner le commentaire sur la ligne de commande.
+* lancer juste `git commit`, et dans ce cas-là un éditeur de code va se lancer automatiquement; on est censé écrire le message dans le fichier, puis sauver et quitter; le truc c'est que vous n'êtes pas forcément confortable avec l'éditeur par défaut (notamment si c'est `vi` qui est notoirement cryptique); notez aussi qu'on peut choisir, une bonne fois pour toutes, 
+un autre éditeur comme par exemple `nano` avec la commande `git config --global
+core.editor "nano"`
+* donc pour l'instant on va laisser cette option-là de coté, et indiquer le message à `git commit` directement **sur la ligne de commande** avec l'option `-m`; et en plus depuis le notebook, c'est plus simple aussi de donner le commentaire sur la ligne de commande.
+
++++
+
+ce qui donne ceci, pour créer notre premier commit
 
 +++
 
@@ -405,7 +416,33 @@ $ git commit -m"licence+readme"
 
 +++
 
-N'essayons pas de comprendre les messages trop cryptiques, nous y reviendrons plus tard, retenons là que les 2 fichiers ont été créés et nous sommes contents.
+N'essayons pas de comprendre les messages trop cryptiques, nous y reviendrons plus tard, retenons juste que les 2 fichiers ont été créés dans le commit, et nous sommes contents.
+
++++
+
+## réparer la perte de fichiers
+
++++
+
+Avant d'aller plus loin, et pour vous convaincre de l'intérêt d'avoir fait ce commit, imaginez qu'à ce stade vous perdez accidentellement vos fichiers (un `rm *` non-intentionnel est si vite arrivé...)
+
+```bash
+       # OOPS !
+       # une fausse manipe ...
+$ rm *
+
+       # on dirait qu'on a tout perdu ?
+$ ls
+
+       # mais en fait non, dans ce simple commit on a tout
+       # ce qu'il faut pour remettre les choses en état
+$ git restore -- readme.md licence.txt
+
+       # et voilà
+$ ls
+licence.txt	readme.md
+
+```
 
 +++
 
@@ -423,9 +460,9 @@ nothing to commit, working tree clean
 
 +++ {"cell_style": "split"}
 
-Revoilà ce terme de **branch master**. Nous pouvons maintenant expliquer plus en avant:
+Revoilà ce terme de **branch `master`**. Nous pouvons maintenant expliquer plus en avant:
 une **branch** est une **référence vers un commit** i.e. *elle nous indique un commit*, on
-pourrait dire aussi quelque chose comme *elle pointe vers un commit*.
+pourrait dire aussi quelque chose comme "*elle pointe vers un commit*".
 
 Avec `git` on a **toujours** la notion de **branche courante** pour savoir où on
 travaille. À l'**initialisation** d'un dépôt la **branche courante** porte par convention
@@ -455,7 +492,7 @@ Revenons à l'état de notre dépôt; `git status` nous dit aussi qu'il n'y a pl
 echo "la licence d'utilisation est dans le fichier licence.txt" >> readme.md
 ```
 
-(on concaténe en redirigeant avec les deux chevrons `>>`; ici donc on vient d'ajouter une ligne dans le fichier `readme,md`)
+(ici avec cette commande un peu absconse on a juste ajouté une ligne dans le fichier `readme.md`; dans vos manipulations vous pouvez utiliser vs-code par exemple pour faire la même chose)
 
 +++
 
@@ -477,11 +514,18 @@ echo "la licence sera spécifiée ultérieurement" >> licence.txt
 
 +++
 
-Enfin, créons aussi le fichier `fact.py` pour y implémenter la fonction factorielle en Python. Là aussi on va être rapide, on utilise la fonction `echo` de `bash` pour rediriger les deux lignes suivantes`"def (n):` et `    pass"`  dans le fichier `fact.py`. Bien sûr, de votre côté vous pouvez à la place éditer ce fichier grâce à votre éditeur de texte `vs-code`.
+Enfin, créons aussi le fichier `fact.py` pour y implémenter la fonction factorielle en Python. Là aussi on va être rapide, on utilise la fonction `echo` de `bash` pour rediriger les deux lignes suivantes`"def (n):` et `    pass"`  dans le fichier `fact.py`. 
 
 ```bash
 echo "def fact (n):" > fact.py
 echo "    pass" >> fact.py
+```
+
+Bien sûr, de votre côté vous pouvez à la place éditer ce fichier avec `vs-code` pour y mettre juste
+
+```python
+def fact (n):
+    pass
 ```
 
 +++
@@ -490,7 +534,8 @@ Donc maintenant où en est-on ?
 
 * Du coté des **fichiers**, nous avons fait
 
-    * deux changements - l'un dans `readme.md`, l'autre dans `licence.txt`
+    * deux changements, en fait des ajouts de lignes -  
+      l'une dans `readme.md`, l'autre dans `licence.txt`
     * une création, avec `fact.py`
 
 * Du coté du **dépôt**
@@ -519,23 +564,19 @@ Nous voyons là les trois états des **fichiers** de notre répertoire courant:
 
 +++
 
-Nous pouvons maintenant décrire les **3 états possibles** pour les **fichiers** sous notre répertoires sous gestion de version git:
+Nous pouvons maintenant décrire les **3 morceaux** de notre répertoire git:
 
 <img src='media/repo-contents-3-add-index-commit.png' width=800>
 
    - l'`espace de travail` avec tous les fichiers au sens usuel (ce que vous voyez dans l'explorateur de fichiers et dans votre éditeur de code), qui peuvent contenir un certain nombre de modifications par rapport au dernier commit
-   - l'`index` (ou `stage`) dans lequel on ajoute - avec `add` - certaines de ces modifications - et pas forcément toutes; l'index sert à préparer le prochain commit; dit autrement, quand on crée un commit, on fait un snapshot de l'index;
+   - l'`index` (ou `stage`) dans lequel on ajoute - avec `add` - certaines de ces modifications - et pas forcément toutes; l'index sert à préparer le prochain commit; dit autrement, quand on crée un commit, on fait un snapshot de ce qu'il y a dans l'index;
    - votre repository local `git` qui contient tous vos commits
 
 +++
 
 On voit qu'une fois qu'un changement a été fait sur un fichier source, `git add` permet de mettre le changement dans l'index. Ce qui est le cas de `readme.md`, mais pas de `licence.txt` qui n'est pas dans l'index comme nous le dit `git status`
 
-Une fois qu'on est satisfait du contenu de l'index, avec `git commit` on crée un commit qui sera **identique** à l'index:
-   - les fichiers qui n'ont pas été modifiés et les fichiers qui ont été modifiés mais pas ajoutés dans l'index restent identiques dans le commit
-   - les fichiers qui ont été modifiés et ajoutés dans l'index sont modifiés dans le commit
-
-Juste après le commit: l'index redevient identique au dernier commit.
+Une fois qu'on est satisfait du contenu de l'index, avec `git commit` on crée un commit qui sera **identique** à l'index.
 
 +++
 
@@ -545,9 +586,11 @@ Juste après le commit: l'index redevient identique au dernier commit.
 
 Faites **attention** car:
 
-cette zone de préparation du prochain commit s'appelle s'appelle indifféremment l'***index*** ou le ***stage*** - et oui, ce serait mieux s'il n'y avait qu'un nom, mais bon, c'est comme ça :)
+cette zone de préparation du prochain commit s'appelle indifféremment l'***index*** ou le ***stage*** - et oui, ce serait mieux s'il n'y avait qu'un nom, mais bon, c'est comme ça :)
 
 mais bref, les deux termes de *index* et *stage* sont **totalement interchangeables**
+
++++
 
 il faut insister également sur le fait que, lorsqu'on parle de l'index
 
@@ -575,13 +618,13 @@ grâce à l'index on peut choisir quels changements mettre ou pas dans le commit
 
 +++
 
-## deuxième commit et `git log`
+## deuxième commit 
 
 +++
 
 Reprenons; à ce stade pour notre part nous allons créer un second commit avec les deux modifications - celles de `readme.md` **et** celles de `licence.txt`
 
-il ne nous reste donc qu'à ajouter `licence.txt` à l'`index` où nous avions déjà ajouté `readme.md`.
+Il ne nous reste donc qu'à ajouter `licence.txt` à l'`index` où nous avions déjà ajouté `readme.md`.
 
 ```bash
 git add licence.txt
@@ -596,6 +639,10 @@ $ git commit -m"informations sur la licence"
 [master 31c4816] informations sur la licence
 2 files changed, 4 insertions(+)
 ```
+
++++
+
+## `git log`
 
 +++
 
@@ -636,7 +683,7 @@ On parle rapidement de l'identifiant d'un commit comme `34269b459201f87b65e7c47b
 * il doit être **unique** dans un projet
 * on doit pouvoir faire des très nombreux commits dans un projet qui peut durer des années.
 
-Ils ont choisi de prendre des entiers écrit en base `16` et en codage hexadécimal, on utilise les 16 chiffres `0`, `1`, ..., `9`, `a`, `b`, `c`, `d`, `e`, `f` où `a = 10` et `f = 15` (ainsi par exemple `FF = 15*16 + 15 = 255` et oui on peut utiliser des miniscules ou des majuscules).
+Ils ont choisi de prendre des entiers écrits en base `16` et en codage hexadécimal, on utilise les 16 chiffres `0`, `1`, ..., `9`, `a`, `b`, `c`, `d`, `e`, `f` où `a = 10` et `f = 15` (ainsi par exemple `FF = 15*16 + 15 = 255` et oui on peut utiliser des miniscules ou des majuscules).
 
 Comme vous le voyez, cet identifiant est assez long (40 chiffres hexadécimaux) cela afin d'assurer de son unicité. Il s'appelle le **hash** du commit, ou encore son **sha1** - prononcer *chat-ouane*.
 
@@ -646,7 +693,7 @@ On calcule rapidement:
   - ça fait donc $40*4$ bits, donc $2^{160}$ *hash* (nombres) différents
   - on est dans l'ordre de $10^{50}$.
 
-C'est tellement grand, qu'en général, 7 caractères suffisent à disambigüer les commits dans un dépôt (donc $2^{7*4} = 2^{28} = 268.435.456$ suites de 7 digits hexadécimaux). Aussi souvent, on ne considèrera que les $7$ premiers caractères du sha-1.
+C'est tellement grand, qu'en général, 7 caractères suffisent à disambigüer les commits dans un dépôt (c'est vrai que $2^{7*4} = 2^{28} = 268.435.456$, le nombre de suites de 7 digits hexadécimaux, c'est déjà assez grand pour que les conflits soient rares). Aussi souvent, on n'utilisera que les $7$ premiers caractères du sha-1.
 
 +++
 
@@ -664,15 +711,22 @@ git log --oneline
 
 +++
 
-On voit maintenant apparaître le nom `HEAD` (faites attention à bien comprendre):
+On voit maintenant apparaître le nom `HEAD`:
 
-* `HEAD` c'est une **référence** vers un commit (comme les branches); un peu comme une variable désigne un objet en Python, une référence en git c'est un nom qui désigne un commit
+* `HEAD` c'est (comme les branches) une **référence** vers un commit;   
+  un peu comme une variable désigne un objet en Python,  
+  une référence en git c'est un nom qui désigne un commit
 
+* `HEAD` est une référence spéciale, une sorte de mot-clé,  
+  qui **désigne toujours le commit courant**, i.e. celui sur lequel vous travaillez
 
-* `HEAD` est une référence spéciale, une sorte de mot-clé, qui **désigne toujours le commit courant**, i.e. celui sur lequel vous travaillez.
+* `HEAD` donc il désigne toujours (le même commit que) la branche courante;  
+  sauf que, on le verra bientôt, on crée facilement plusieurs branches dans un repo  
 
-
-* `HEAD` donc il désigne toujours (le même commit que) la branche courante; sauf que, on le verra bientôt, la branche courante ne s'appelle pas toujours `master`
+  et donc le commit courant:
+    * n'est *pas toujours* désigné par la référence `master`  
+      (parce que ce n'est pas toujours la branche courante),
+    * mais il est *toujours* désigné par `HEAD`
 
 +++
 
@@ -711,12 +765,9 @@ $ git log --oneline
 
 on voit ici, avec le fragment `HEAD -> master`, que les deux références pointent vers le deuxième commit - qui apparaît en premier parce que c'est plus pratique de voir le plus récent d'abord
 
-les deux sont montées de concert. La prochaine fois que nous faisons `git commit`, ce nouveau *commit* sera lié à `HEAD` puis `HEAD` montera d'un cran pour désigner ce nouveau commit, et `master` fera de même.
+les deux sont montées de concert. La prochaine fois que nous ferons `git commit`, ce nouveau *commit* sera lié à `HEAD` puis `HEAD` montera d'un cran pour désigner ce nouveau commit, et `master` fera de même.
 
-la mention `(HEAD -> master)` nous indique que :
-
-* ce commit (qui a pour sha-1 `37f5d17` les 7 premiers caractères) est le commit courant (`HEAD`)
-* la branche `master` est actuellement posée sur ce commit.
+la mention `(HEAD -> master)` nous indique que c'est `master` la branche courante
 
 +++
 
@@ -836,7 +887,7 @@ licence.txt
 readme.md
 ```
 
-Voila ce sont ces 3 fichiers. Que feriez-vous si vous vouliez savoir lequels ont été modifiés depuis le dernier `git commit` ?
+Voilà ce sont ces 3 fichiers. Que feriez-vous si vous vouliez savoir lequels ont été modifiés depuis le dernier `git commit` ?
 
 Oui vous feriez un `git status` !
 
@@ -959,13 +1010,14 @@ Le `.` permet que `vs-code` *voit* votre répertoire courant.
 
 +++
 
-J'arrive sur l'écran habituel où je localise l'extension git sur le coté (pas besoin d'installation spécifique)
+J'arrive sur l'écran habituel où je localise l'*extension git* sur le coté gauche (pas besoin d'installation spécifique)   
+J'active cette extension en cliquant la zone indiquée par la flèche rouge
 
 ![](media/vscode-welcome.png)
 
 +++
 
-J'active cette extension (= je clique sur le rond bleu indiqué par la flèche rouge), et je vois ceci - je rappelle qu'on a tous les changements de `fact.py` dans l'index :
+Et je vois ceci - je rappelle qu'on a tous les changements de `fact.py` dans l'index :
 
 ![](media/vscode-2-changes-areas.png)
 
@@ -1026,22 +1078,23 @@ dans les deux cas, utilisez  `git status` et `git log` pour vérifier que votre 
 
 +++
 
-Nous commençons à avoir quelques commits, bientôt nous créerons des branches et auront des graphes de `commits` (sans cycles), voilà le moment de montrer un argument de la commande `log` qui est `--graph`.
-`git log --graph`
+Nous commençons à avoir quelques commits, bientôt nous créerons des branches et auront des graphes de `commits` (sans cycles), voilà le moment de montrer l'option `--graph` de la commande `log`.
 
 ```bash
 $ git log --oneline --graph
 ```
 
-Alors pour l'instant ça ne fait que d'ajouter une petite étoile sur le coté gauche, mais c'est ça qui nous permettra de bien suivre les branches lorsqu'on en verra ! *Notons qu'entre une figure et une autre, les `sha-1` peuvent ne pas être cohérents: les figures proviennent de plusieurs essais de repos).*
+Alors pour l'instant ça ne fait que d'ajouter une petite étoile sur le coté gauche, mais c'est ça qui nous permettra de bien suivre les branches lorsqu'on en verra ! (*Notons qu'entre une figure et une autre, les `sha-1` peuvent ne pas être cohérents: les figures proviennent de plusieurs essais de repos).*
 
 <img src="./media/git-log-graph.png" width=600>
 
 +++
 
-Notons que vous pouvez (facilement) définir des raccourcis dans la configuration globale de `git`.
+Sachez que vous pouvez (facilement) définir des raccourcis dans la configuration globale de `git`.
 
-Par exemple si je veux taper `git lg` à la place de `git log --oneline -- graph`. Je vais definir un `alias` qui s'appelle `lg` pour `log --oneline -- graph` (qui existera *une bonne fois pour toutes*) de la manière suivante:
+Par exemple si je veux taper `git lg` à la place de `git log --oneline -- graph`, 
+je vais definir un `alias` qui s'appelle `lg` pour `log --oneline -- graph`
+(qui existera *une bonne fois pour toutes*) de la manière suivante:
 
 ```bash
 git config --global alias.lg "log --oneline --graph"
@@ -1056,7 +1109,7 @@ git lg
 
 +++
 
-Mais reprenons l'étude du graphe : dans le modèle de données de git, chaque commit possède 1 ou plusieurs **parents** (ou 0 dans le cas particulier du tout premier commit) : ce sont les commits qui ont servi de base pour le constuire.
+Mais reprenons l'étude du graphe : dans le modèle de données de git, chaque commit possède 1 ou plusieurs **parents** (ou 0 dans le cas particulier du tout premier commit) : ce sont les commits qui ont servi de base pour le construire.
 
 Dans notre cas avec `my-first-project`, sans compter le commit initial, nous avons 3 commits qui ont chacun exactement un parent.
 
@@ -1097,13 +1150,15 @@ Afin de demander à `git` de nous *remettre* sur un commit, on va devoir indique
 En français on aurait envie de dire quelque chose comme: "*l'avant-dernier commit*". Mais bien sûr on parle à un ordinateur sur une ligne de commande, donc il nous faut une façon d'identifier les commits, et pour ça on a plusieurs manières:
    - votre commit courant s'appelle `HEAD`
    - un commit peut être référencé par une branche (dans notre cas la branche `master`)
-   - un commit a un identificateur unique son `sha-1`
+   - un commit a un identificateur unique: son `sha-1`
 
 En supplément de ces manières, `git` propose des mécanismes permettant de "*naviguer*" dans le graphe de commits avec `~` et `^`.
 
 Ainsi par exemple, `HEAD` est le commit courant:
    - `HEAD~` est le premier parent de `HEAD`; donc l'avant dernier commit
    - `HEAD~2` est le premier parent du premier parent de `HEAD`
+   
+On peut utiliser `~` avec n'importe quelle référence, par exemple `master~`, ou `18b63f5~` si vous avez un SHA-1 qui vaut `18b63f5`.   
 
 +++
 
@@ -1116,18 +1171,19 @@ $ git lg
 * 01b0604 licence+readme
 ```
 
-* `HEAD` est le dernier commit (21dfb8a)
-* `HEAD~` est donc l'avant dernier commit (5befcd2)
-* `HEAD~2` est donc l'avant-avant dernier commit (790b59a)
+* `HEAD` est donc le dernier commit (afec18a)
+* `HEAD~` est l'avant dernier commit (e2c02ca)
+* `master~2` est l'avant-avant dernier commit (31c4816)
+* `e2c02ca~` est aussi l'avant-avant dernier commit (31c4816)
 * ...
 
-C'est plus pratique que de devoir donner un SHA-1, parce qu'entre votre dépôt et le mien, les commits n'ayant pas été créés à la même date, ils n'ont pas le même SHA-1; donc si je veux écrire un script qui revient d'un commit en arrière et qui marche chez tout le monde, je vais utiliser `HEAD~` plutôt que `afec18a`.
+C'est plus pratique, pour la rédaction de ce cours, d'utiliser ce type de notation plutôt que d'insérer un SHA-1 en dur, parce qu'entre votre dépôt et le mien, les commits n'ayant pas été créés à la même date, ils n'ont pas le même SHA-1; donc si je veux écrire un script qui revient d'un commit en arrière et qui marche chez tout le monde, je vais utiliser `HEAD~` plutôt que `e2c02ca`.
 
-+++
++++ {"tags": ["framed_cell"]}
 
 **exercice**
 
-entrainez-vous à utiliser ce mécanisme en conjonction avec `git log`
+Entrainez-vous à utiliser ce mécanisme en conjonction avec `git log`
 
     git log --oneline HEAD
     git log --oneline HEAD~
@@ -1137,9 +1193,7 @@ Vous remarquez que lorsqu'on passe, à `git log`, l'avant-avant-dernier commit (
 
 **Mais** comme on indique à `git log` de parcourir de repo en commençant par le deuxième commit, eh bien comme corollaire de ce qu'on a vu plus haut (avec le graphe de parent et comment il est orienté), ce parcours-là ne peut découvrir que 2 commits.
 
-On peut utiliser `~` à partir de n'importe quelle référence, par exemple `master~`, ou `18b63f5~` si vous avez un SHA-1 qui vaut `18b63f5`.
-
-+++ {"tags": ["level_intermediate"]}
++++ {"tags": ["level_advanced"]}
 
 Nous avons vu qu'un commit peut avoir deux parents. Avec `~` on ne peut pas atteindre le second parent. Cela se fera fait en  utilisant `^`.
 
@@ -1154,7 +1208,7 @@ Et pourquoi ont-ils eu besoin de `~` parce que `HEAD~8` est plus simple à écri
 
 Nous pourrons ainsi naviguer dans les graphes, par exemple:
 
-+++ {"tags": ["level_intermediate"], "cell_style": "split"}
++++ {"tags": ["level_advanced"], "cell_style": "split"}
 
 * `HEAD~2` désigne le parent du parent de `HEAD`
 * `HEAD^2` désigne le deuxième parent de `HEAD`
@@ -1164,7 +1218,7 @@ autrement dit,
 * *`X~`* est dans le sens de la hauteur, alors que
 * *`X^`* travaille dans le sens de la largeur; ce qui est illustré sur la figure ci-contre
 
-+++ {"tags": ["level_intermediate"], "cell_style": "split"}
++++ {"tags": ["level_advanced"], "cell_style": "split"}
 
 <img src="media/commit-navigation.png" width="200px">
 
@@ -1177,7 +1231,7 @@ autrement dit,
 Imaginons qu'on a besoin de faire un changement, mais pas en partant du dernier commit (parce que ca on sait déjà le faire).
 
 Pourquoi pourrait-on avoir besoin de faire ça ? ça semble bien compliqué...
-mais en fait, une fois qu'on a appris à le faire, on se rend compte que ce n'est pas si compliqué, et c'est une opération qui s'impose quand :
+mais en fait, une fois qu'on a appris à le faire, on se rend compte que ce n'est pas si compliqué, et que c'est une opération qui s'impose quand :
 
 * on doit faire un opération de maintenance, sur le code de la v1.0 qu'on a publié il y a deux ans
 * ou bien aussi lorsqu'on a commencé une nouvelle fonctionnalité (feature), qui prend du temps à finir, et qu'entretemps un bug a été trouvé. La version dans notre branche courante est toute cassée, ce n'est donc pas sur cette base qu'on veut corriger le bug, mais en repartant d'une version qui *marche* qui est *stable*
@@ -1212,7 +1266,12 @@ $ git branch
 
 +++
 
-On n'a qu'une branche, `master`, elle a une `*` car c'est la branche courante. Pour en créer une autre (qu'on va appeler `devel` car c'est une tradition fréquente) on va utiliser une autre forme de `git branch`, on lui passe: le nom de la branche et le commit où veut poser la branche (faites `git branch --help` pour voir les détails). On crée la branche `devel` sur le parent de `HEAD`.
+On n'a qu'une branche, `master`, et en face de son nom **il y a une `*`** car c'est **la branche courante**.  Pour en créer une autre (qu'on va appeler `devel` car c'est une tradition fréquente)  on va utiliser une autre forme de `git branch`, on lui passe: 
+* le nom de la branche
+* et le commit où veut poser la branche.  
+ (faites `git branch --help` pour voir les détails). 
+ 
+Du coup pour créer la branche `devel` sur le parent de `HEAD` on peut écrire
 
 ```bash
 $ git branch devel HEAD~
@@ -1255,9 +1314,8 @@ def fact (n):
 +++
 
 À ce stade, il est crucial de bien faire la différence entre:
-* les **fichiers** présents dans le répertoire, qui appartiennent à ce qu'on va appeller notre *espace de travail*
+* les **fichiers** présents dans le répertoire, qui appartiennent à ce qu'on a appelé l'*espace de travail*
 * les **commits** qui appartiennent quant à eux au **repository**
-(concrètement ils sont dans le répertoire `.git`)
 
 +++
 
@@ -1265,11 +1323,13 @@ def fact (n):
 
 +++
 
-C'est maintenant que nous allons faire une commande qui a un effet plus massif. Signalons bien que **la commande suivante devrait être exécutée seulement dans un repo propre**, c'est-à-dire sans modifications pendantes. Si ce n'est pas le cas, vous prenez le risque que git refuse de continuer.
+C'est maintenant que nous allons faire une commande qui a un effet plus intrusif.
+
+Signalons bien que **la commande suivante devrait être exécutée seulement dans un repo propre**, c'est-à-dire sans modifications pendantes. Si ce n'est pas le cas, vous prenez le risque que git refuse de continuer.
 
 +++
 
-Nous voulons donc revenir en arrière (sur `devel`). On va demander à git de faire ça pour nous, on a préparé le terrain en créant une branche qui dit à partir d'où on veut recommencer, ne reste plus qu'à y aller.
+Nous voulons donc revenir en arrière (sur `devel`). On va demander à git de faire ça pour nous, on a préparé le terrain en créant une branche qui dit à partir d'où on veut recommencer, **il ne reste plus qu'à y aller**.
 
 Mais attention, puisqu'on veut faire une modification à partir de l'avant dernier commit, ça veut dire qu'on veut travailler sur les fichiers de cet avant dernier commit. Donc **on veut aussi que git change nos fichiers**. C'est assez évident quand on y pense, mais parfois certains débutants sont surpris de réaliser que **git a touché à leurs fichiers**.
 
@@ -1406,12 +1466,15 @@ c'est ici que vous pouvez commencer à voir en pratique l'intérêt de la notion
 * à part ça, toute la logique qu'on avait vue :
   * le commit est créé au dessus du commit courant
   * la branche courante suit le nouveau commit
-  * les autres branches sont inertes
+  * les autres branches sont inertes  
+
   est toujours à l'oeuvre à l'identique
 
-+++
++++ {"tags": ["framed_cell"]}
 
-On enleve le `--all` de la commande. Que remarquez vous ?
+exercice: on enleve le `--all` de la commande. Que remarquez vous ? 
+
+d'après vous, pourquoi ça se comporte comme ça ?
 
 <img src="media/git-no-all.png" width=600>
 
@@ -1431,8 +1494,9 @@ quelques précisions :
 
 * ici pour la simplicité du scénario, chacun des deux chemins n'implique qu'un seul commit, mais ce n'est pas du tout une limitation
 * les commits pourraient aussi bien concerner plein de fichiers, avec des renommages, des ajouts, des suppressions de fichier, la mécanique est la même
-* par contre, on voit bien que **si les deux branches modifient le même bout de code** mais de façon différente, la procédure automatisée de fusion va rencontrer un problème, car elle ne va pas pouvoir décider quelle est la "bonne" version à conserver
-* dans ce cas on dit qu'**il y a un conflit** au moment de la fusion (merge);
+* la fusion entre les deux branches est **automatique**
+* mais par contre, on voit bien que **si les deux branches modifient le même bout de code** mais de façon différente, la procédure automatisée de fusion va rencontrer un problème, car elle **ne va pas pouvoir décider** quelle est la "bonne" version à conserver
+* dans ce cas on dit qu'**il y a un conflit** au moment de la fusion (merge)
 
 nous ici on s'est arrangés (en modifiant des fichiers différents) pour que ça ne nous arrive pas; mais on en reparlera plus tard
 
@@ -1444,21 +1508,20 @@ reprenons; nous sommes toujours sur la branche `devel`. Vérifions le avec `git 
 $ git status
 On branch devel
 nothing to commit, working tree clean
-$
-
 ```
 
 +++
 
-Si nous voulons fusionner `devel` avec `master`. Nous allons utiliser la commande suivante `git merge master` mais avant de la taper, lisez pour bien comprendre ce que ca va faire:
+Si nous voulons fusionner `devel` avec `master`:   
+nous allons utiliser la commande `git merge master`, mais avant de la taper, lisez pour bien comprendre ce que ca va faire:
 
 * on **crée un nouveau commit**
-* parce que le commit est produit par un `merge`, il va **avoir deux parents**
-  le premier est le commit courant `HEAD`, le second est celui référencé par `master`
-* comme d'habitude nous allons rester sur la branche `devel` qui est la branche courante
+* parce que le commit est produit par un `merge`, il va **avoir deux parents**  
+  le premier est le commit courant `HEAD` (*aka* `devel`),   
+  le second est (celui référencé par) `master`
+* puisque `devel` est la branche courante, le nouveau commit sera désigné par `devel`
   et donc **`devel` va avancer d'un cran**
-* et comme d'habitude puisque `master` n'est pas la branche courante
-  **`master` reste sur place**
+* et `master` qui n'est pas la branche courante reste sur place
 
 Donc toujours avant de taper la commande, pouvez-vous imaginer à quoi va ressembler la sortie de `git log` après le merge ?
 

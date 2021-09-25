@@ -34,7 +34,7 @@ version: '1.0'
 
 +++
 
-on a vu tout à l'heure un exemple de fusion (*merge*) qui - on avait tout bien choisi pour - s'est passé sans douleur ni surprise
+on a vu tout à l'heure un exemple de fusion (*merge*) qui s'est passé sans douleur ni surprise - il faut dire qu'on avait tout bien choisi pour :)
 
 mais toutes les fusions ne se comportent pas de la même manière, et dans ce notebook très court on va essayer de couvrir un peu tous les cas de figure :
 
@@ -54,17 +54,13 @@ un commit qui **contienne à la fois le code courant et celui du commit `to-merg
 
 (que comme d'habitude on peut exprimer comme un nom de branche, un SHA1, le résultat d'une navigation avec les opérateurs `~` et `^`, etc…)
 
-+++
-
-***
++++ {"tags": ["framed_cell"]}
 
 on rappelle aussi d'ailleurs, dans un autre registre, qu'il est sage de lancer la commande `git merge` **dans un dépôt  propre**, sans modifications pendantes
 
 +++
 
 ## le *fast-forward*
-
-+++
 
 une fusion *fast-forward*, c'est le cas où **le commit courant est déjà un parent** (transitivement) de `to-merge`; comme par exemple ici :
 
@@ -77,17 +73,21 @@ une fusion *fast-forward*, c'est le cas où **le commit courant est déjà un pa
   * `C` contient master (qui est un de ses parents)
   * `C` contient `devel` (c'est `devel`)
   
-et du coup dans ce cas de figure, la fusion **n'a même pas besoin de créer un commit**, il suffit de **faire avancer** la branche courante (d'où le terme de *fast-forward*)
+et du coup dans ce cas de figure, la fusion **n'a même pas besoin de créer un commit**  
+il suffit de **faire avancer** la branche courante (d'où le terme de *fast-forward*)
 
-(bien sûr ça signifie aussi de modifier l'index et les fichiers; il faut toujours lancer la fusion sur un dépôt propre)
+(bien sûr ça signifie aussi de modifier l'index et les fichiers;  
+il faut toujours lancer la fusion sur un dépôt propre)
 
 +++
 
+### comment savoir si on est dans le cas du *fast-forward* ?
+
 la règle qui permet de savoir si on est, ou pas, dans le cas d'un *fast-forward*, est simple :  
-**s'il existe une chaine de parenté** entre les deux commits (celui ou on est, et celui qu'on veut fusionner),  
+**si (et seulement si) il existe une chaine de parenté** entre les deux commits (celui ou on est, et celui qu'on veut fusionner),  
 alors on est dans un *fast-forward*, il n'est pas besoin de créer un commit, il en existe déjà un qui matérialise la fusion
 
-ici dans le premier exemple on avait `to-merge=C → B → HEAD=A`, donc pas besoin de créer un commit, simplement besoin d'avancer la branche courante.
+ici dans le premier exemple on avait `to-merge=C → B → HEAD=A`, donc pas besoin de créer un commit, simplement besoin d'avancer la branche courante
 
 +++ {"tags": ["level_intermediate"]}
 
@@ -184,7 +184,7 @@ Ils partent donc tous les deux du formulaire vide, ils remplissent chacun leur p
 ```{code-cell}
 :cell_style: split
 :tags: [level_intermediate]
-:trusted: false
+:trusted: true
 
 !cat form-mcgonagall.txt
 ```
@@ -192,7 +192,7 @@ Ils partent donc tous les deux du formulaire vide, ils remplissent chacun leur p
 ```{code-cell}
 :cell_style: split
 :tags: [level_intermediate]
-:trusted: false
+:trusted: true
 
 !cat form-dumbledore.txt
 ```
@@ -204,6 +204,7 @@ sauriez-vous simuler ce scénario ?
 pour McGonagall, c'est simple, comme on est sur master il suffit de modifier `form.txt` (1ère version, note 12) et de commiter
 
 ```bash
+cp form-mcdonagall.txt
 git add form.txt
 git commit -m"notes mcgonagall"
 ```
@@ -219,7 +220,7 @@ pour la deuxième version, on a besoin de créer la branche `dumbledore` et de r
   ```
 * ou tout faire d'un coup avec le raccourci `git switch -c`  
    ```bash
-   git switch -c HEAD~ dumbledore
+   git switch -c dumbledore HEAD~
    ```
 
 +++ {"tags": ["level_intermediate"]}
@@ -230,8 +231,21 @@ on remplit alors la fiche dans la version dumbledore, et on commite exactement c
 
 
 ```bash
+cp form-dumbledore.txt form.txt
 git add form.txt
 git commit -m"notes dumbledore"
+```
+
++++ {"tags": ["level_intermediate"]}
+
+et à ce stade le repo ressemble à ceci
+
+```bash
+$ git log --all --graph --oneline
+* 34fa617 (HEAD -> dumbledore) notes dumbledore
+| * 65b135a (main) notes mcgonagall
+|/
+* 6f201cc le formulaire vierge
 ```
 
 +++ {"tags": ["level_intermediate"]}
@@ -243,7 +257,7 @@ git commit -m"notes dumbledore"
 à ce stade on a le choix :
 
 1. de se mettre sur `master` et de fusionner `dumbledore`
-1. ou l'inverse, rester sur `dumbledore` et fusionner master
+1. ou l'inverse, rester sur `dumbledore`, et fusionner `master`
 
 c'est relativement équivalent, mais en général on préfère se mettre sur `master`, et c'est ce qu'on va faire ici
 
@@ -271,7 +285,8 @@ ce qui se passe, c'est ceci
 <img src="media/merge-conflict.png" width="600px" />
 
 * les changements faits dans la zone "chacun chez soi" peut être fusionnés sans souci
-* par contre comme les deux branches ont modifié la ligne de total chacune de leur côté, **la fusion ne sait pas quelle version retenir**
+* par contre comme les deux branches ont modifié la ligne de total chacune de leur côté  
+  **la fusion ne sait pas quelle version retenir**
 
 +++ {"tags": ["level_intermediate"]}
 
@@ -294,8 +309,9 @@ dans quel état est notre dépôt à ce stade ?
 
   no changes added to commit (use "git add" and/or "git commit -a")  
   ```
-* on apprend comme ça que c'est dans `form.txt` que se situe le souci (bon nous on n'a qu'un seul fichier, mais quand il y a 200 c'est une information intéressante)  
-* et `git merge` nous a laissé les conflits **annotés directement dans le code**
+* on apprend comme ça que c'est dans `form.txt` que se situe le souci  
+  (bon nous on n'a qu'un seul fichier, mais quand il y a 200 c'est une information intéressante)  
+* et `git merge` nous a laissé les conflits **annotés directement dans le code**  
   avec cette forme qui est facile à voir visuellement
   ```console
   <<<<<<< HEAD
@@ -304,24 +320,28 @@ dans quel état est notre dépôt à ce stade ?
   total        : 15
   >>>>>>> dumbledore
   ```  
-* noter enfin qu'à ce stade, on ne **peut plus** utiliser la commande `git commit` pour créer un nouveau commit; il faut d'abord **résoudre le conflit**
+* noter enfin qu'à ce stade, on ne **peut plus** utiliser la commande `git commit` pour créer un nouveau commit  
+  il faut d'abord retourner dans un état propre: **nettoyer le repo**
 
 +++ {"tags": ["level_intermediate"]}
 
-### résoudre le conflit
+### nettoyer (1): revenir en arriére
 
 pour cela, on a principalement deux choix :
 
-* soit on décide que tout bien réfléchi, c'est beaucoup trop compliqué, on ne va pas s'en sortir, on veut juste tout défaire et revenir à l'état avant le `merge`, et pour ça on fait juste
+1. soit on décide que tout bien réfléchi, c'est beaucoup trop compliqué, on ne va pas s'en sortir, on veut juste tout défaire et revenir à l'état avant le `merge`, et pour ça on fait juste
   ```bash
   $ git merge --abort
   $ git status
   On branch master
   nothing to commit, working tree clean
   ```
-  ouf, on a tout effacé tout, on est exactement comme avant le merge
-  
-* soit on décide de gérer, c'est-à-dire de passer sur les conflits (nous on n'en a qu'un) et de décider quoi faire;
+  ouf, on a **tout effacé**, on est exactement **comme avant le merge**
+
++++ {"tags": ["level_intermediate"]}
+
+### nettoyer (2): résoudre le conflit
+2. soit on décide de gérer, c'est-à-dire de passer sur les conflits (nous on n'en a qu'un) et de décider quoi faire;
 
 +++ {"tags": ["level_intermediate"]}
 
@@ -345,7 +365,12 @@ la mauvaise nouvelle, c'est qu'aucune des deux ne convient, et ce qu'on va faire
   ```bash
   git add form.txt
   ```
-* et là on peut concrétiser le merge en créant un commit comme d'habitude 
+* et là on peut concrétiser le merge en faisant
+  ```bash
+  git merge --continue
+  ```
+  petit détail, on ne peut pas passer de message sur la ligne de commande avec -m ici  
+  et remarquez qu'on aurait tout aussi bien pu faire tout simplement   
   ```bash
   git commit -m"fusion après conflit résolu à la main"
   ```
@@ -378,7 +403,7 @@ la mauvaise nouvelle, c'est qu'aucune des deux ne convient, et ce qu'on va faire
   total        : 27
   ```
 
-+++ {"tags": []}
++++
 
 ## résumé
 

@@ -32,7 +32,7 @@ version: '1.0'
 
 ## on contextualise
 
-nous avons vu précédemment qu'un dépôt git de travail se compose des trois morceaux : fichiers / index et commits  
+nous avons vu précédemment qu'un dépôt git de travail se compose des trois morceaux : fichiers / index / commits  
 on a vu qu'un dépôt *propre* est un dépôt dans lequel ces trois étages ont des contenus identiques  
 et on a vu comment "faire avancer" une modification, en deux phases :
 
@@ -78,7 +78,7 @@ en général le dépôt n'est pas propre, on peut voir les (deux familles de) di
 
 ![](media/lifecycle-3-editor.png)
 
-lorsque le dépôt n'est pas propre, le changement que je sauve δ s'ajoute en fait aux différences existantes, qui s'accumulent évidemment.
+le changement que je sauve δ s'ajoute en fait aux différences existantes, qui s'accumulent évidemment.
 
 +++
 
@@ -113,7 +113,7 @@ jusqu'à maintenant on a travaillé "de gauche à droite"
 
 typiquement, on met en chantier une feature, et au bout d'une heure on se dit, non vraiment ça n'est pas du coup comme ça qu'il fallait prendre le problème
 
-ou encore, pendant le debug on a ajouté 250 instructions `print()`, qu'on veut enlever; plutôt que de les enlever une par une, c'est plus malin de mettre les changements utiles dans l'index, et de jeter les autres différences 
+ou encore, pendant le debug on a ajouté 250 instructions `print()`, qu'on veut enlever; plutôt que de les enlever une par une, c'est plus malin de mettre les changements utiles dans l'index, et de jeter les autres différences
 
 +++ {"tags": ["level_intermediate"]}
 
@@ -139,17 +139,40 @@ pour se mettre inconditionnellement sur un commit, avec un dépôt propre
 
 ![](media/lifecycle-8-reset-hard.png)
 
-+++ {"tags": ["level_advanced"]}
++++ {"tags": ["level_intermediate"]}
 
-### `git commit --amend`
+## refaire un commit avec `git commit --amend`
 
-vous avez fait un commit A à partir du commit B; mais le commit A est raté !
+vous venez de faire un commit mais il est raté ! 
 
-avec `git commit --amend` vous allez pouvoir refaire un commit A', qui part toujours de B, et qui contient la même chose que A + l'index courant
+en général ça peut venir 
 
-ça permet donc de refaire le dernier commit
+1. soit du texte du message qu'on a tapé trop vite
+1. soit c'est plus profond, c'est le contenu
+1. plus rarement c'est le nom de l'auteur qui est faux
 
-remarquez qu'on ne modifie pas A pour en faire A' : le commit A est toujours dans le dépôt, un commit est immutable
+dans tous les cas, pas de panique, `git commit --amend` est fait pour ça
+
+le principe c'est de:
+* refaire un commit qui a le·s même·s parent·s que le commit courant
+* dans lequel on a **aussi** fait entrer l'index courant
+* et en redemandant le message bien entendu
+
+si bien que, selon le cas qui vous concerne dans les 2 ci-dessus, vous pouvez:
+
+1. pour récrire votre message, refaites simplement  
+   `git commit --amend`  
+   juste après avoir fait le commit avec un message raté
+   
+1. si c'est plus profond, ajoutez dans l'index  
+   les changements qui manquent au commit courant  
+   avant de faire ici encore  
+   `git commit --amend`  
+
+1. dans le dernier cas, faites alors  
+   `git commit --amend --author="Jean Dupont <jean.dupont@example.com>"`
+  
+remarquez qu'on ne modifie pas le commit courant (les commits sont immutables), on en crée simplement un nouveau (le premier reste dans le repo, mais s'il est inatteignable, il sera nettoyé au bout de quelque temps)
 
 +++ {"tags": ["level_basic"]}
 

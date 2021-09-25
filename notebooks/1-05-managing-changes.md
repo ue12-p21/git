@@ -167,7 +167,7 @@ voici rapidement deux exemples d'outils gratuits qui sont bien pratiques
 
 l'outil `Sourcetree` (malheureusement pas supporté sous linux) visualise les deux classes de différences comme ceci
 
-<img src="media/source-tree.png">
+<img src="media/sourcetree.png">
 
 +++
 

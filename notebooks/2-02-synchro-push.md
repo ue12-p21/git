@@ -9,8 +9,8 @@ kernelspec:
   display_name: Calysto Bash
   language: bash
   name: calysto_bash
-notebookname: "synchro entre d\xE9p\xF4ts : pousser"
-version: '1.0'
+nbhosting:
+  title: "synchro entre d\xE9p\xF4ts : pousser"
 ---
 
 <div class="licence">

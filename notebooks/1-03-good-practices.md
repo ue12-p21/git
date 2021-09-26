@@ -9,8 +9,8 @@ kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
   name: python3
-notebookname: bonnes pratiques
-version: '1.0'
+nbhosting:
+  title: bonnes pratiques
 ---
 
 <div class="licence">

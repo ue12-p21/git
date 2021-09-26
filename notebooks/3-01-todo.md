@@ -7,11 +7,11 @@ jupytext:
     extension: .md
     format_name: myst
 kernelspec:
-  display_name: Python 3
+  display_name: Python 3 (ipykernel)
   language: python
   name: python3
-notebookname: 'cours git: devoir'
-version: '1.0'
+nbhosting:
+  title: 'cours git: devoir'
 ---
 
 # Cours git - devoir
@@ -72,6 +72,8 @@ pour l'évaluation de votre travail on tiendra compte entre autres 
 * ce dépôt contient un seul commit avec un seul fichier `README.md`, dont le contenu est **produit** par la cellule Python suivante (évaluez, et copiez-collez)
 
 ```{code-cell} ipython3
+:trusted: false
+
 # copier les lignes produites par cette cellule
 # dans le fichier README.md
 

@@ -9,8 +9,8 @@ kernelspec:
   display_name: Calysto Bash
   language: bash
   name: calysto_bash
-notebookname: "diff\xE9rences pendantes"
-version: '1.0'
+nbhosting:
+  title: "diff\xE9rences pendantes"
 ---
 
 <div class="licence">

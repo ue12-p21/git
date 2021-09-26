@@ -9,8 +9,8 @@ kernelspec:
   display_name: Calysto Bash
   language: bash
   name: calysto_bash
-notebookname: la fusion
-version: '1.0'
+nbhosting:
+  title: la fusion
 ---
 
 <div class="licence">

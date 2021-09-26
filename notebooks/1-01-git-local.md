@@ -9,8 +9,8 @@ kernelspec:
   display_name: Calysto Bash
   language: bash
   name: calysto_bash
-notebookname: les bases
-version: '1.0'
+nbhosting:
+  title: les bases
 ---
 
 <div class="licence">

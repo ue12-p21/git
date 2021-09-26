@@ -9,8 +9,8 @@ kernelspec:
   display_name: Calysto Bash
   language: bash
   name: calysto_bash
-notebookname: "r\xE9sum\xE9"
-version: '1.0'
+nbhosting:
+  title: "r\xE9sum\xE9 (1)"
 ---
 
 <div class="licence">
@@ -45,8 +45,8 @@ version: '1.0'
 |         | `--graph` montre la relation parent |
 | `git status` | affiche l'état du dépôt: |
 |            | branche courante |
-|            | en rouge: changements pas dans l'index |
 |            | en vert: changements dans l'index |
+|            | en rouge: changements pas dans l'index |
 |            | fichiers pas dans le dépôt|
 | `git diff` | entre les fichiers et l'index |
 |          | `--cached` entre l'index et le commit |

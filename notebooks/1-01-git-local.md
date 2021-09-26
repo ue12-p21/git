@@ -1430,7 +1430,7 @@ on va le faire mais pour l'instant, on va choisir de faire une modification dans
 
 par exemple on va modifier la licence; pour ça, utilisez par exemple votre éditeur de code, pour mettre dans `licence.txt` le contenu suivant :
 
-```txt
+```
 License Creative Commons CC-BY-NC-ND 4.0
 https://creativecommons.org/licenses/by-nc-nd/4.0/
 ```

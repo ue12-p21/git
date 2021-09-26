@@ -48,9 +48,12 @@ le principe est presque exactement le réciproque de `git pull`, avec toutefois 
 
 ### on a besoin de droits particuliers
 
-d'une part, nous essayons de **faire des modifications** dans le dépôt distant, et du coup il va nous falloir **les droits en écriture** !
+première grosse différence avec le `pull`  
+nous essayons de **faire des modifications** dans le dépôt distant, et du coup il va nous falloir **les droits en écriture** !
 
-c'est un sujet qu'on a déjà effleuré dans les slides d'introduction où, souvenez-vous, on avait vu que Bob pouvait collaborer avec alice, soit si elle lui donnait les droits d'écrire dans son dépôt, soit en passant par son *fork*, dans lequel il peut écrire
+c'est un sujet qu'on a déjà effleuré dans les slides d'introduction où, souvenez-vous, on avait vu que Bob pouvait collaborer avec Alice si :
+* soit si elle lui donnait les droits d'écrire dans son dépôt,
+* soit en passant par son *fork*, dans lequel il peut écrire
 
 j'en profite pour signaler que le *fork* est une notion introduite par la surcouche github, et non pas une notion native de git, on n'aura pas le temps d'approfondir, mais à ce stade vous devez avoir deviné l'idée générale
 
@@ -58,9 +61,9 @@ j'en profite pour signaler que le *fork* est une notion introduite par la surcou
 
 ### un push ne peut faire qu'un fast-forward 
 
-l'autre différence importante, c'est que par sécurité on a décidé qu'on n'autorisait `git push` **seulement** à faire des merge *fast-forward*
+l'autre différence importante, c'est que par sécurité on a décidé qu'avec `git push` on peut **seulement** faire des merge ***fast-forward***
 
-pourquoi ça ? l'idée c'est simplement que si on se retrouve à devoir créer un commit de fusion à distance, il y a le risque de se trouver en présence de conflits; et dans ce cas-là une intervention manuelle est nécessaire
+pourquoi ça ? l'idée c'est simplement que, si on se retrouve à devoir créer un commit de fusion à distance, il y a le risque de se trouver en présence de conflits; et dans ce cas-là une intervention manuelle est nécessaire; mais on n'a pas accès aux fichiers à distance pour résoudre le conflit, bref c'est possiblement dangereux 
 
 sans discuter plus avant de la pertinence de ce choix, voyons d'abord comment tout cela fonctionne
 
@@ -85,5 +88,3 @@ dans la suite de la vidéo on envisage un cas (**très très fréquent**) où le
 ## conclusion
 
 à part ces deux différences (besoin de permission, et refus de créer un commit de fusion), le fonctionnement de `push` est le symétrique de celui de `pull`
-
-vous avez à présent tout le bagage pour vous attaquer au petit exercice en groupe qui est décrit dans la dernière partie de ce cours, et dans lequel vous allez avoir la possibilité d'exercer toutes ces manipulations de mise à jour de dépôts un peu dans tous les sens

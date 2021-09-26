@@ -86,7 +86,7 @@ nous allons l'exécuter sur un repo de test pour mettre en évidence d'autres ef
 vérifiez que vous n'avez pas de dossier qui s'appelle `sandbox`, et tapez la commande
 
 ```bash
-$ git clone https://github.com/ue12/git-sandbox sandbox
+$ git clone https://github.com/ue12-p21/git-sandbox sandbox
 Cloning into 'sandbox'...
 remote: Enumerating objects: 4, done.
 remote: Counting objects: 100% (4/4), done.
@@ -118,7 +118,7 @@ interprétons cette réponse sybilline :
 * dans le sens où : on a connaissance d'un **autre dépôt**, qui contient le **même projet**  
 * dans le jargon `git`, un tel dépôt s'appelle un *remote*  
 * et par commodité, `git clone` crée un *remote* pour se souvenir d'où on a fait le clône  
-  il y a toutes les chances qu'on ait de nouveau à échanger avec lui  
+  car il y a toutes les chances qu'on ait de nouveau à échanger avec lui  
   et lui donne par convention le nom de **`origin`**
 
 dans notre cas, ce dépôt, c'est bien sûr celui sur github - ça pourrait être quoi d'autre ?
@@ -129,7 +129,7 @@ d'ailleurs pour vérifier on peut faire
 
 ```bash
 $ git remote get-url origin
-https://github.com/ue12/git-sandbox
+https://github.com/ue12-p21/git-sandbox
 ```
 
 +++
@@ -140,7 +140,7 @@ https://github.com/ue12/git-sandbox
 
 une fois qu'on a cloné, on est redevenu totalement autonome; on pourrait par exemple couper le réseau, on a tout ce qu'il faut localement pour modifier le code, on peut travailler dans son coin, et créer localement des commits si on en a besoin
 
-ça n'empêche pas que de temps en temps on a envie d'aller voir s'il n'y a pas eu des nouveautés; pour ça on va retourner demander au dépôt initial s'il a du nouveau
+ça n'empêche pas que de temps en temps on a envie d'aller voir s'il n'y a pas eu des nouveautés; pour ça on va retourner demander au dépôt initial s'il y a du nouveau
 
 pour ça la deuxième commande de synchronisation qu'on est amené à utiliser lorsqu'on a cloné un dépôt, c'est `git pull`
 
@@ -162,7 +162,7 @@ le premier point important à retenir, c'est que
 * **dans un `pull` par contre**, c'est la partie `merge` - qu'on a déjà étudiée  
   qui elle, peut **avoir un impact sur l'état du dépôt** (commit courant + index + fichiers)
   
-donc déja, comme premier conseil, il est bon de prendre l'habitude faire `git pull` dans un dépôt propre
+donc déja, comme premier conseil, il est bon de prendre l'habitude faire `git pull` **dans un dépôt propre**
 
 +++
 
@@ -172,20 +172,22 @@ le second point à retenir, c'est le rôle des références de branches distante
 
 `origin/master`
 
-on a vu dans la vidéo que `origin/master`, ça correspond à l'endroit où se trouve la branche `master` dans le dépôt distant (le remote) `origin`
+on a vu dans la vidéo que `origin/master`:
+* ça correspond à une étiquette **locale** (dans le repo local)
+* qui nous permet de savoir où se trouve la branche `master` dans le dépôt **distant** (le remote) `origin`
 
 +++
 
 il faut insister sur le fait que c'est une **information locale** et que c'est du *best effort*; on ne **garantit pas** que cette information est **toujours à jour**, car elle est uniquement mise à jour par `git fetch`
 
-dit autrement, si vous ne faites pas ni `git pull` ni `git fetch` pendant un mois, vous aurez toujours `origin/master` qui pointe dans votre dépôt au même endroit, alors que sur github la branche aura sans doute avancé...
+dit autrement, si vous ne faites jamais ni `git pull` ni `git fetch` pendant un mois, vous aurez toujours `origin/master` qui pointe dans votre dépôt au même endroit, alors que sur github la branche aura sans doute avancé...
 
 +++ {"tags": ["level_intermediate"]}
 
 **Note** 
 en pratique on fait plus souvent `git pull` que `git fetch`, car bien sûr souvent ce qu'on veut faire c'est se mettre à jour; et mon opinion c'est que c'est un peu dommage, car le fait de faire d'abord `fetch` permet de bien évaluer l'impact que va avoir le `pull` (notamment : est-ce un fast-forward ?)
 
-une fois qu'on a dit ça toutefois, si vous utilisez une GUI comme `Sourcetree` ou `GitKraken` ou autre, il y a de fortes chances qu'elle prenne l'initiative de faire pour vous un `git fetch` régulièrement - genre toutes les 5 minutes; c'est très pratique car ça permet, justement, de recevoir des notifications lorsqu'il y a du nouveau dans le dépôt *upstream*
+une fois qu'on a dit ça, si vous utilisez une GUI comme `Sourcetree` ou `GitKraken` ou autre, il y a de fortes chances qu'elle fasse pour vous un `git fetch` **automatiquement** - genre toutes les 5 minutes; c'est très pratique car ça permet, justement, de recevoir des notifications lorsqu'il y a du nouveau dans le dépôt *upstream*
 
 +++
 
@@ -193,9 +195,15 @@ une fois qu'on a dit ça toutefois, si vous utilisez une GUI comme `Sourcetree` 
 
 la troisième chose à retenir est que, puisque `pull` finit par faire un `merge`, tout ce qu'on a appris sur le merge s'applique ici aussi; et notamment :
 
-* premier cas (comme dans la vidéo) si le commit qui vient de l'*upstream* est un enfant de mon commit (donc en gros, si je n'ai pas créé de commit depuis la dernière fois que j'étais à jour), le merge va se faire en mode *fast-forward*, on n'a pas besoin de créer un commit de fusion, je me retrouve au même commit que le remote 
+* premier cas (comme dans la vidéo) si le commit qui vient de l'*upstream* est un enfant de mon commit  
+ (donc en gros, si je n'ai **pas créé de commit de mon coté** depuis la dernière fois que j'étais à jour)  
+  le merge va se faire en mode ***fast-forward***, on n'a pas besoin de créer un commit de fusion  
+  je me retrouve sur **le même commit** que le remote 
 
-* par contre, si entre temps j'avais fait un commit de mon côté, alors là le merge va créer un commit de fusion; ça va sans dire, mais forcément le commit de fusion est créé **dans mon dépôt** hein, forcément, on est en train de faire un `pull`, on n'est pas du tout en train d'essayer de toucher au dépôt distant (dans lequel, de toutes façons, on n'a pas forcément le droit d'écrire en plus)
+* par contre, si entre temps j'avais fait un commit de mon côté, alors là le merge va **créer un commit de fusion**  
+  ça va sans dire, mais forcément le commit de fusion est créé **dans mon dépôt** hein, forcément  
+  on est en train de faire un `pull`, on n'est pas du tout en train d'essayer de toucher au dépôt distant  
+  (dans lequel, de toutes façons, on n'a pas forcément le droit d'écrire en plus)
 
 <video width="800px" controls src="media/PullDiverge.mp4" type="video/mp4"></video>
 
@@ -203,12 +211,15 @@ la troisième chose à retenir est que, puisque `pull` finit par faire un `merge
 
 ### quelques détails
 
-le plus souvent pour les débutants, il n'y a qu'un seul remote et il s'appelle `origin`; sachez que dans des configurations plus complexes on doit bien entendu préciser avec quel remote on veut se synchroniser :
+le plus souvent pour les débutants, il n'y a qu'un seul remote et il s'appelle `origin`  
+sachez que dans des configurations plus complexes on doit bien entendu préciser avec quel remote on veut se synchroniser :
 
 * `git fetch` est en réalité un raccourci pour `git fetch origin`
-* `git pull` est en réalité un raccourci pour `git pull origin`
+* `git pull` est en réalité un raccourci pour `git pull origin`  
   ou encore `git pull origin master` puisqu'on est sur la branche master
 
 +++ {"tags": ["level_advanced"]}
 
-pour les très avancés, signalons enfin la notion de *tracking branch*; il y a quelque part dans la configuration du dépôt une information qui lie la branche locale `master` à la branche distante `master` du *remote* `origin`; grâce à cela, on n'a pas besoin d'être plus explicite, et quand on tape uste `git pull` on merge `origin/master` dans `master`
+pour les très avancés, signalons enfin la notion de *tracking branch*  
+il y a quelque part dans la configuration du dépôt une information qui lie la branche locale `master` à la branche distante `master` du *remote* `origin`  
+grâce à cela, on n'a pas besoin d'être plus explicite, et quand on tape juste `git pull` on merge `origin/master` dans `master`

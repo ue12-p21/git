@@ -182,7 +182,7 @@ reprenons le niveau de base, pour signaler enfin qu'il existe plein d'outils gra
 
 on a déjà présenté l'extension git dans vs-code, qui a l'avantage d'être intégrée nativement, mais peut vite s'avérer limitée
 
-voici rapidement deux exemples d'outils gratuits qui sont bien pratiques
+voici rapidement quelques outils gratuits qui sont bien pratiques
 
 +++
 
@@ -190,7 +190,13 @@ voici rapidement deux exemples d'outils gratuits qui sont bien pratiques
 
 l'outil `Sourcetree` (malheureusement pas supporté sous linux) visualise les deux classes de différences comme ceci
 
-<img src="media/sourcetree.png">
+<img src="media/sourcetree-changes.png">
+
++++
+
+voici une autre vue qui visualise aussi le graphe des commits
+
+<img src="media/sourcetree-history.png">
 
 +++
 
@@ -198,4 +204,27 @@ l'outil `Sourcetree` (malheureusement pas supporté sous linux) visualise les de
 
 l'outil GitKraken, qui est disponible cette fois sur linux, les présente quant à lui comme ceci
 
-<img src="media/git-kraken.png" width="800px">
+<img src="media/gitkraken-changes.png">
+
++++
+
+ici encore l'outil sait afficher le graphe des commits
+
+<img src="media/gitkraken-history.png">
+
++++
+
+### vs-code
+
+vscode vient avec une extension native 'git'  
+(rien à installer, simplement cliquer sur l'extension dans la barre de gauche)
+
+voici comment on navigue dans les différences avec vs-code
+
+<img src="media/vscode-changes.png">
+
++++
+
+si en plus vous installez l'extension 'git graph', vous pourrez aussi voir le graphe des commits directement dans vs-code
+
+<img src="media/vscode-history.png">

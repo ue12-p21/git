@@ -67,7 +67,20 @@ https://github.com/ue12-p21/git-tp-clone-pull-groupe<n>
 vous travaillez à plusieurs dans un repo, et vous n'**arrivez pas à pousser un commit** ?  
 c'est sûrement que quelqu'un d'autre a poussé avant vous…
 
-https://github.com/ue12-p21/git-killing-push
+https://github.com/ue12-p21/git-tp-killing-push
+
++++
+
+***
+
++++ {"tags": ["framed_cell"]}
+
+## tp-teamwork
+
+un tp plus complet où on simule un travail en groupe  
+à faire en groupes de 3 ou 4
+
+https://github.com/ue12-p21/git-tp-teamwork
 
 +++
 

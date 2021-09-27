@@ -9,6 +9,9 @@ tracks:
   - name: git en réseau
     notebooks:
       - "notebooks/2*.md"
+  - name: TPs
+    notebooks:
+      - "notebooks/9*.md"
 
 builds:
   - id: handouts
@@ -20,4 +23,3 @@ builds:
       jupyter-book build .
 
 static-mappings: []
-

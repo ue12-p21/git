@@ -1,6 +1,7 @@
+# the course structure under nbhosting
 tracks:
-- description: "tutorial git"
-  name: git
+- name: git
+  description: "tutorial git"
   id: git
   sections:
   - name: git en local
@@ -15,11 +16,12 @@ tracks:
 
 builds:
   - id: handouts
-    name: static html
-    description: searchable static html as produced by jupyter-book
+    name: format HTML
+    description: contenu statique et cherchable
     directory: notebooks
     script: |
       pip install jupyter-book
       jupyter-book build .
 
+# no mapping needed
 static-mappings: []

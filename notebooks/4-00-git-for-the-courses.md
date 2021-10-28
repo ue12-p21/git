@@ -42,17 +42,26 @@ on explicite également les étapes de mise à jour ci-dessous
 
 +++
 
+## configurer `git`
+
++++
+
+avant de commencer, assurez-vous que vous avez [bien configuré git comme expliqué ici](2-00-setup.md)
+
++++
+
 ## au début du cours
 
 ### cloner les notebooks sur son ordinateur
 
 * aller sur l'interface Git Bash
-* se déplacer (avec les commandes `cd` et `pwd`) dans le dossier souhaité
+* se déplacer (avec les commandes `pwd` et `ls` et `cd`) dans le dossier souhaité
 * une fois dans le dossier où vous souhaitez cloner les notebooks  
-  (par exemple /Users/tparment/git/ue12-p21), faire 
+  (par exemple `/Users/tparment/git/ue12-p21`), faire 
   ```bash
-  git clone git@github.com:ue12-p21/python-numerique.git
+  git clone https://github.com/ue12-p21/python-numerique.git
   ```
+  pour trouver la bonne URL, regardez comment on fait dans la vidéo, en faisant bien attention de choisir le mode 'HTTPS'; 
 * un dossier va être créé, ici il s'appelle `python-numerique`  
   (si vous préférez un autre nom, ajoutez le à la commande ci-dessus)
 * dans le dossier choisi, vous allez trouver tout le contenu du cours, y compris les  notebooks ! ils sont généralement dans un sous-dossier `notebooks/`
@@ -63,16 +72,16 @@ en naviguant sur github et plus particulièrement sur la page de l'utilisateur u
 
 ### installer les dépendances
 
-* *optionnel*: si vous utilisez un système d'environnements virtuels, prenez soin de sélectionner le bon
+* *optionnel*: si vous utilisez un système d'environnements virtuels, prenez soin de sélectionner le bon, par exemple (selon votre setup)
   ```bash
-  conda activate python-numerique
+  conda activate pynum
   ```
 * dans le dossier du cours se trouve un fichier `requirements.txt`  
   allez dans ce dossier et tapez  
   ```bash
   pip install -r requirements.txt
   ```
-* a minima il vous faut avoir installé `jupyter` et `jupytext`,  
+* a minima il vous faut avoir installé `jupyter` et `jupytext`   
   qui devraient en principe être installés à ce stade; si ce n'est pas le cas, faites 
   ```bash
   pip install jupyter jupytext
@@ -95,7 +104,8 @@ en naviguant sur github et plus particulièrement sur la page de l'utilisateur u
 avant chaque nouveau cours, pour mettre à jour votre dossier de cours:
 
 * lancer git bash
-* vous rendre dans le dossier local où vous avez cloné le répertoire (la commande `git status` devrait fonctionner à cet endroit)
+* vous rendre dans le dossier local où vous avez cloné le répertoire  
+  (la commande `git status` devrait fonctionner à cet endroit)
 * faire `git pull`
 * il est possible que tout fonctionne bien :)
 * néanmoins, si jamais **vous avez modifié certains fichiers**, il vous faudra d'abord enregistrer vos modifications:
@@ -127,6 +137,12 @@ cela signifie qu'**il y a des conflits** (par exemple, vous avez fait des modifi
     ```
 * vous devez alors choisir le code final que vous gardez (soit en ne laissant qu'un des deux blocs dans le fichier, soit en faisant un mixte des deux); débarrassez-vous en tous des lignes-balise en `<<<` et `===` et `>>>`
 * une fois tous les conflits de tous les fichiers résolus, vous pouvez faire 
-`git add` des fichiers en question, et `git commit`. Et normalement vous avez maintenant la version locale à jour !
+`git add` des fichiers en question, et enfin
+  ```bash
+  git commit --no-edit
+  ```
+  Et normalement vous avez maintenant la version locale à jour !  
+  (le `--no-edit`, c'est pour ne pas avoir à passer dans l'éditeur, ça n'est vraiment pas utile ici de mettre un message spécifique)
+  
 
 si vous avez des questions, n'hésitez pas à nous contacter (ou à chercher sur internet en anglais).

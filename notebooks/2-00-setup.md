@@ -30,7 +30,7 @@ nbhosting:
 
 +++
 
-avant de continuer le cours, faisons le point sur la configuration 
+avant de continuer le cours, faisons le point sur la configuration
 
 +++
 
@@ -81,7 +81,6 @@ pour les curieux, il y a deux niveaux de configuration
 il y a une commande `git config` qui permet d'inspecter la configuration  
 par défaut on regarde ou change la première famille  
 mais avec l'option `--global` on regarde la seconde
-
 
 +++ {"tags": ["level_intermediate"]}
 

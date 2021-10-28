@@ -12,7 +12,10 @@ tracks:
       - "notebooks/2*.md"
   - name: TPs
     notebooks:
-      - "notebooks/9*.md"
+      - "notebooks/3*.md"
+  - name: git pour les cours
+    notebooks:
+      - "notebooks/4*.md"
 
 builds:
   - id: handouts

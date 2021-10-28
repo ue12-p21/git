@@ -67,8 +67,8 @@ en naviguant sur github et plus particulièrement sur la page de l'utilisateur u
   ```bash
   conda activate python-numerique
   ```
-* dans le dossier du cours se trouve un fichier `requirements.txt`
-* allez dans ce dossier et tapez  
+* dans le dossier du cours se trouve un fichier `requirements.txt`  
+  allez dans ce dossier et tapez  
   ```bash
   pip install -r requirements.txt
   ```

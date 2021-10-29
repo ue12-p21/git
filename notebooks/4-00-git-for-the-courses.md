@@ -116,9 +116,11 @@ avant chaque nouveau cours, pour mettre à jour votre dossier de cours:
 * il est possible que tout fonctionne bien :)
 * néanmoins, si jamais **vous avez modifié certains fichiers**, il vous faudra d'abord enregistrer vos modifications:
   ```bash
-  git add $(git ls-files -m)
+  git add -u
   git commit -m "j'enregistre mes modifications"
   ```
+
+  (le -u signifie "ajouter seulement les fichiers que j'ai modifiés)
 * après cela, refaites `git pull`
 
 +++

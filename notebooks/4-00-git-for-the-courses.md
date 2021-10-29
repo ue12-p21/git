@@ -54,7 +54,7 @@ avant de commencer, assurez-vous que vous avez [bien configuré git comme expliq
 
 ### cloner les notebooks sur son ordinateur
 
-* aller sur l'interface Git Bash
+* aller sur l'interface `Git Bash`
 * se déplacer (avec les commandes `pwd` et `ls` et `cd`) dans le dossier souhaité
 * une fois dans le dossier où vous souhaitez cloner les notebooks  
   (par exemple `/Users/tparment/git/ue12-p21`), faire 
@@ -76,6 +76,12 @@ en naviguant sur github et plus particulièrement sur la page de l'utilisateur u
   ```bash
   conda activate pynum
   ```
+* *optionnel*: vous pouvez aussi créer un environnement virtuel en lui donnant un nom (et éventuellement la version de `python` que vous voulez), n'oubliez pas de le sélectionner (l'activer)
+  ```bash
+  conda create -n mon-env-pynum python=3.9.0
+  conda activate mon-env-pynum
+  ```
+  
 * dans le dossier du cours se trouve un fichier `requirements.txt`  
   allez dans ce dossier et tapez  
   ```bash
@@ -103,7 +109,7 @@ en naviguant sur github et plus particulièrement sur la page de l'utilisateur u
 
 avant chaque nouveau cours, pour mettre à jour votre dossier de cours:
 
-* lancer git bash
+* lancer `Git Bash`
 * vous rendre dans le dossier local où vous avez cloné le répertoire  
   (la commande `git status` devrait fonctionner à cet endroit)
 * faire `git pull`
@@ -122,7 +128,8 @@ avant chaque nouveau cours, pour mettre à jour votre dossier de cours:
 si au moment du pull, vous voyez ce message:  
 >  `automatic merge failed; fix conflicts and then commit the result.`
 
-cela signifie qu'**il y a des conflits** (par exemple, vous avez fait des modifications locales **au même endroit** que des changements sur le dépot distant); normalement c'est assez rare, mais si c'est le cas, il va vous falloir régler les conflits; voici comment les résoudre:
+cela signifie qu'**il y a des conflits**
+(par exemple, vous avez fait *localement* dans un fichier des modifications **au même endroit** que des changements sur le même fichier sur le dépot distant); normalement c'est assez rare, mais si c'est le cas, il va vous falloir régler les conflits; voici comment les résoudre:
 
 * après le `git pull`, faites un `git status`  
 * les fichiers en rouge dans la catégorie `unmerged paths` correspondent à ceux qui sont en conflit. 
@@ -135,14 +142,14 @@ cela signifie qu'**il y a des conflits** (par exemple, vous avez fait des modifi
     le code distant
     >>>>>>> origin/master
     ```
-* vous devez alors choisir le code final que vous gardez (soit en ne laissant qu'un des deux blocs dans le fichier, soit en faisant un mixte des deux); débarrassez-vous en tous des lignes-balise en `<<<` et `===` et `>>>`
+* vous devez alors choisir le code final que vous gardez (soit en ne laissant qu'un seul des deux blocs dans le fichier, soit en faisant un mixte des deux); débarrassez-vous aussi des lignes-balises en `<<<` et `===` et `>>>`
 * une fois tous les conflits de tous les fichiers résolus, vous pouvez faire 
 `git add` des fichiers en question, et enfin
   ```bash
   git commit --no-edit
   ```
   Et normalement vous avez maintenant la version locale à jour !  
-  (le `--no-edit`, c'est pour ne pas avoir à passer dans l'éditeur, ça n'est vraiment pas utile ici de mettre un message spécifique)
+  (le `--no-edit` sert à ne pas passer dans l'éditeur, il n'est vraiment pas utile ici de mettre un message spécifique)
   
 
 si vous avez des questions, n'hésitez pas à nous contacter (ou à chercher sur internet en anglais).

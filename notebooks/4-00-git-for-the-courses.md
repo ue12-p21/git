@@ -61,7 +61,9 @@ avant de commencer, assurez-vous que vous avez [bien configuré git comme expliq
   ```bash
   git clone https://github.com/ue12-p21/python-numerique.git
   ```
-  pour trouver la bonne URL, regardez comment on fait dans la vidéo, en faisant bien attention de choisir le mode 'HTTPS'; 
+  pour trouver la bonne URL, regardez comment on fait dans la vidéo  
+  en faisant bien attention de choisir le mode `HTTPS` comme ceci:  
+  <img src="media/github-copy-url.png" width=400px>
 * un dossier va être créé, ici il s'appelle `python-numerique`  
   (si vous préférez un autre nom, ajoutez le à la commande ci-dessus)
 * dans le dossier choisi, vous allez trouver tout le contenu du cours, y compris les  notebooks ! ils sont généralement dans un sous-dossier `notebooks/`
@@ -120,7 +122,7 @@ avant chaque nouveau cours, pour mettre à jour votre dossier de cours:
   git commit -m "j'enregistre mes modifications"
   ```
 
-  (le -u signifie "ajouter seulement les fichiers que j'ai modifiés)
+  (le `-u` signifie "*ajouter seulement les fichiers que j'ai modifiés*")
 * après cela, refaites `git pull`
 
 +++

@@ -85,3 +85,12 @@ https://github.com/ue12-p21/git-tp-teamwork
 +++
 
 ***
+
++++ {"tags": ["framed_cell"]}
+
+## tp-conflict
+
+un tp à faire individuellement  
+on crée délibérément un conflit pour savoir reconnaître les symptômes, et s'entrainer à résoudre le conflit
+
+[le README est ici](../tps/tp-conflict/README.md)

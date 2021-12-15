@@ -43,7 +43,7 @@ https://github.com/ue12-p21/git-tp-add-by-lines
 
 +++ {"tags": ["framed_cell"]}
 
-## tp-clone-push
+## tp-clone-pull
 
 nos cours sont publiés sur github, et vous les **clonez** chez vous  
 puis pour le cours suivant, le prof publie une **nouvelle version** du cours
@@ -54,7 +54,7 @@ et que se passe-t-il alors exactement dans votre copie locale, si vous avez vous
 
 ce TP demande une préparation spécifique par groupe, une fois que c'est prêt visitez
 
-https://github.com/ue12-p21/git-tp-clone-pull-groupe<n>
+https://github.com/ue12-p21/git-tp-clone-pull-groupe`n`
 
 +++
 

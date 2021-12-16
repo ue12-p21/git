@@ -48,7 +48,7 @@ distant; on explicite également les étapes de mise à jour ci-dessous
 +++
 
 avant de commencer, assurez-vous que vous avez [bien configuré git comme
-expliqué ici](2-00-setup.md)
+expliqué ici](0-00-setup.md)
 
 +++
 
@@ -64,8 +64,8 @@ expliqué ici](2-00-setup.md)
   git clone https://github.com/ue12-p21/python-numerique.git
   ```
   pour trouver la bonne URL, regardez comment on fait dans la vidéo  
-  en faisant bien attention de choisir le mode `HTTPS` comme ceci:  
-  <img src="media/github-copy-url.png" width=400px>
+  en faisant bien attention de choisir le mode `SSH` comme ceci:  
+  <img src="media/github-choose-ssh.png" width=400px>
 * un dossier va être créé, ici il s'appelle `python-numerique`  
   (si vous préférez un autre nom, ajoutez le à la commande ci-dessus)
 * dans le dossier choisi, vous allez trouver tout le contenu du cours, y compris

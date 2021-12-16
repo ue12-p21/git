@@ -6,6 +6,7 @@ tracks:
   sections:
   - name: git en local
     notebooks:
+      - "notebooks/0*.md"
       - "notebooks/1*.md"
   - name: git en réseau
     notebooks:

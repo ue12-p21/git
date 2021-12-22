@@ -170,17 +170,17 @@ donc déja, comme premier conseil, il est bon de prendre l'habitude faire `git p
 
 le second point à retenir, c'est le rôle des références de branches distantes, comme par exemple
 
-`origin/master`
+`origin/main`
 
-on a vu dans la vidéo que `origin/master`:
+on a vu dans la vidéo que `origin/main`:
 * ça correspond à une étiquette **locale** (dans le repo local)
-* qui nous permet de savoir où se trouve la branche `master` dans le dépôt **distant** (le remote) `origin`
+* qui nous permet de savoir où se trouve la branche `main` dans le dépôt **distant** (le remote) `origin`
 
 +++
 
 il faut insister sur le fait que c'est une **information locale** et que c'est du *best effort*; on ne **garantit pas** que cette information est **toujours à jour**, car elle est uniquement mise à jour par `git fetch`
 
-dit autrement, si vous ne faites jamais ni `git pull` ni `git fetch` pendant un mois, vous aurez toujours `origin/master` qui pointe dans votre dépôt au même endroit, alors que sur github la branche aura sans doute avancé...
+dit autrement, si vous ne faites jamais ni `git pull` ni `git fetch` pendant un mois, vous aurez toujours `origin/main` qui pointe dans votre dépôt au même endroit, alors que sur github la branche aura sans doute avancé...
 
 +++ {"tags": ["level_intermediate"]}
 
@@ -216,10 +216,10 @@ sachez que dans des configurations plus complexes on doit bien entendu préciser
 
 * `git fetch` est en réalité un raccourci pour `git fetch origin`
 * `git pull` est en réalité un raccourci pour `git pull origin`  
-  ou encore `git pull origin master` puisqu'on est sur la branche master
+  ou encore `git pull origin main` puisqu'on est sur la branche main
 
 +++ {"tags": ["level_advanced"]}
 
 pour les très avancés, signalons enfin la notion de *tracking branch*  
-il y a quelque part dans la configuration du dépôt une information qui lie la branche locale `master` à la branche distante `master` du *remote* `origin`  
-grâce à cela, on n'a pas besoin d'être plus explicite, et quand on tape juste `git pull` on merge `origin/master` dans `master`
+il y a quelque part dans la configuration du dépôt une information qui lie la branche locale `main` à la branche distante `main` du *remote* `origin`  
+grâce à cela, on n'a pas besoin d'être plus explicite, et quand on tape juste `git pull` on merge `origin/main` dans `main`

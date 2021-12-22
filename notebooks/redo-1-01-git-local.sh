@@ -91,7 +91,7 @@ git commit -m"licence CC"
 
 
 ##### fusion
-git merge master -m "ma première fusion"
+git merge main -m "ma première fusion"
 
 
 ##### on en est là

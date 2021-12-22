@@ -76,7 +76,7 @@ nbhosting:
 * **branche / *branch*** : une branche correpond juste à une étiquette vers un commit; la branche courante avance au fur et à mesure qu'on crée des commits;
 notons que `git` permet de travailler sur plusieurs branches *en parallèle*: ainsi chaque développeur peut travailler sur sa propre version du code sans impacter les autres; la mise en commun se fera plus tard au moment de la *fusion* des branches.
 
-* **fusion / *merge*** : typiquement on *fusionnera* la branche de travail d'un·e développeu·r·se sur la branche principale (`master`) afin d'y intégrer le résultat de son travail. Parfois l'outil n'y arrive pas tout seul (typiquement lorsque deux développeu·r·se·s ont modifié une même section de code) et on se trouve alors face à un **conflit** que l'on devra résoudre manuellement.
+* **fusion / *merge*** : typiquement on *fusionnera* la branche de travail d'un·e développeu·r·se sur la branche principale (`main`) afin d'y intégrer le résultat de son travail. Parfois l'outil n'y arrive pas tout seul (typiquement lorsque deux développeu·r·se·s ont modifié une même section de code) et on se trouve alors face à un **conflit** que l'on devra résoudre manuellement.
 
 +++
 

@@ -65,7 +65,7 @@ git commit -m"notes dumbledore"
 git log --all --oneline --graph
 
 
-git switch master
+git switch main
 git merge dumbledore
 
 

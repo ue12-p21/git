@@ -63,14 +63,14 @@ nbhosting:
 |              | **non intrusif:** le commit courant, l'index et les fichiers |
 |              | ne **sont pas modifiés** |
 | ￮￮￮￮￮￮￮￮￮￮￮￮ | ***adopter des nouveautés*** |
-| `git pull` | *ou* `git pull origin master` |
+| `git pull` | *ou* `git pull origin main` |
 |            | fait d'abord un `fetch origin` |
-|            | puis un `merge origin/master` |
+|            | puis un `merge origin/main` |
 |            | **intrusif** : comme pour un `merge` |
 | ￮￮￮￮￮￮￮￮￮￮￮￮ | ***publier des nouveautés*** |
-| `git push` | *ou* `git push origin master` |
+| `git push` | *ou* `git push origin main` |
 |            | essaie de pousser dans le *remote* `origin` |
-|            | le commit courant au dessus de la branche `master` |
+|            | le commit courant au dessus de la branche `main` |
 |            | **conditions nécessaires:** |
 |            | 1. avoir les droits d'accès dans le *remote* |
 |            | 2. il doit s'agit d'une fusion *fast-forward* |

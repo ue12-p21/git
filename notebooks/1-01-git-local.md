@@ -288,12 +288,12 @@ Ce message vous dit plusieurs choses que nous allons détailler.
 +++
 
 ***
-***On branch master***
+***On branch main***
 
-Dans un dépôt git, il y a toujours la notion de branche courante; on y reviendra, retenons pour l'instant qu'à la création du dépôt, on nous crée une branche qui s'appelle toujours `master`, et qui est la branche courante 
+Dans un dépôt git, il y a toujours la notion de branche courante; on y reviendra, retenons pour l'instant qu'à la création du dépôt, on nous crée une branche qui s'appelle `main`, et qui est la branche courante 
 
-**note:**  depuis quelque temps, la branche créée par défaut  
-**s'appelle parfois `main`** et non pas `master`
+**note:** depuis quelque temps, la branche créée par défaut  
+**s'appelle `main`** et non plus `master`
 
 +++
 
@@ -406,7 +406,7 @@ ce qui donne ceci, pour créer notre premier commit
 
 ```bash
 $ git commit -m"licence+readme"
-[master (root-commit) 01b0604] licence+readme
+[main (root-commit) 01b0604] licence+readme
  2 files changed, 2 insertions(+)
  create mode 100644 licence.txt
  create mode 100644 readme.md
@@ -454,24 +454,24 @@ Essayons maintenant `git status`
 
 ```bash
 $ git status
-On branch master
+On branch main
 nothing to commit, working tree clean
 ```
 
 +++ {"cell_style": "split"}
 
-Revoilà ce terme de **branch `master`**. Nous pouvons maintenant expliquer plus en avant:
+Revoilà ce terme de **branch `main`**. Nous pouvons maintenant expliquer plus en avant:
 une **branch** est une **référence vers un commit** i.e. *elle nous indique un commit*, on
 pourrait dire aussi quelque chose comme "*elle pointe vers un commit*".
 
 Avec `git` on a **toujours** la notion de **branche courante** pour savoir où on
 travaille. À l'**initialisation** d'un dépôt la **branche courante** porte par convention
-le nom de **`master`** (ou plus récemment, **`main`**)
+le nom de **`main`** (ou plus récemment, **`main`**)
 
 D'autre part quand vous créez un commit, la branche courante "avance" pour désigner le
 nouveau commit.
 
-Donc dans notre cas, et tant qu'on ne crée pas de nouvelle branche, `master` va toujours
+Donc dans notre cas, et tant qu'on ne crée pas de nouvelle branche, `main` va toujours
 désigner le dernier commit.
 
 +++ {"cell_style": "split"}
@@ -540,7 +540,7 @@ Donc maintenant où en est-on ?
 
 * Du coté du **dépôt**
 
-    * on est sur la branche courante `master`, qui pointe vers le dernier commit réalisé
+    * on est sur la branche courante `main`, qui pointe vers le dernier commit réalisé
     * et on a commencé à préparer un futur commit, qui inclut le changement dans `readme.md`.
 
 +++
@@ -636,7 +636,7 @@ Puis nous faisons notre deuxième `commit`:
 
 ```bash
 $ git commit -m"informations sur la licence"
-[master 31c4816] informations sur la licence
+[main 31c4816] informations sur la licence
 2 files changed, 4 insertions(+)
 ```
 
@@ -650,7 +650,7 @@ Maintenant que nous avons fait deux commits, nous aimerions voir l'historique de
 
 ```
 git log
-commit 31c4816dd90653fc1839b72a4dc0d504656586d9 (HEAD -> master)
+commit 31c4816dd90653fc1839b72a4dc0d504656586d9 (HEAD -> main)
 Author: Alice <alice@email.fr>
 Date:   Sat Sep 26 21:54:38 2020 +0200
 
@@ -724,7 +724,7 @@ On voit maintenant apparaître le nom `HEAD`:
   sauf que, on le verra bientôt, on crée facilement plusieurs branches dans un repo  
 
   et donc le commit courant:
-    * n'est *pas toujours* désigné par la référence `master`  
+    * n'est *pas toujours* désigné par la référence `main`  
       (parce que ce n'est pas toujours la branche courante),
     * mais il est *toujours* désigné par `HEAD`
 
@@ -745,13 +745,13 @@ Voici une illustration; on a anticipé un petit peu, on a imaginé le cas où on
 
 ici la branche courante est `devel`
 
-`HEAD` désigne toujours **la branche courante** (même si celle-ci ne s'appelle pas `master`)
+`HEAD` désigne toujours **la branche courante** (même si celle-ci ne s'appelle pas `main`)
 
 après le commit les deux sont montées
 
-remarquez qu'ici `master` est restée au même endroit car elle n'est **pas** la branche courante
+remarquez qu'ici `main` est restée au même endroit car elle n'est **pas** la branche courante
 
-`master` n'aurait pas bougé non plus même si elle avait référencé (pointé sur) le commit `C`
+`main` n'aurait pas bougé non plus même si elle avait référencé (pointé sur) le commit `C`
 
 +++
 
@@ -759,15 +759,15 @@ Pour revenir à notre cas
 
 ```bash
 $ git log --oneline
-31c4816 (HEAD -> master) informations sur la licence
+31c4816 (HEAD -> main) informations sur la licence
 01b0604 licence+readme
 ```
 
-on voit ici, avec le fragment `HEAD -> master`, que les deux références pointent vers le deuxième commit - qui apparaît en premier parce que c'est plus pratique de voir le plus récent d'abord
+on voit ici, avec le fragment `HEAD -> main`, que les deux références pointent vers le deuxième commit - qui apparaît en premier parce que c'est plus pratique de voir le plus récent d'abord
 
-les deux sont montées de concert. La prochaine fois que nous ferons `git commit`, ce nouveau *commit* sera lié à `HEAD` puis `HEAD` montera d'un cran pour désigner ce nouveau commit, et `master` fera de même.
+les deux sont montées de concert. La prochaine fois que nous ferons `git commit`, ce nouveau *commit* sera lié à `HEAD` puis `HEAD` montera d'un cran pour désigner ce nouveau commit, et `main` fera de même.
 
-la mention `(HEAD -> master)` nous indique que c'est `master` la branche courante
+la mention `(HEAD -> main)` nous indique que c'est `main` la branche courante
 
 +++
 
@@ -780,7 +780,7 @@ Puis ajoutons le fichier contenant la factorielle et créons un commit.
 ```bash
 $ git add fact.py
 $ git commit -m"première implémentation de factorielle dans le fichier fact.py"
-[master e2c02ca] première implémentation de factorielle dans le fichier fact.py
+[main e2c02ca] première implémentation de factorielle dans le fichier fact.py
  1 file changed, 2 insertions(+)
  create mode 100644 fact.py
 ```
@@ -797,7 +797,7 @@ Refaisons un `git log --oneline` pour y voir plus clair:
 
 ```bash
 $ git log --oneline
-e2c02ca (HEAD -> master) première implémentation de factorielle dans le fichier fact.py
+e2c02ca (HEAD -> main) première implémentation de factorielle dans le fichier fact.py
 31c4816 informations sur la licence
 01b0604 licence+readme
 $
@@ -1149,7 +1149,7 @@ Afin de demander à `git` de nous *remettre* sur un commit, on va devoir indique
 
 En français on aurait envie de dire quelque chose comme: "*l'avant-dernier commit*". Mais bien sûr on parle à un ordinateur sur une ligne de commande, donc il nous faut une façon d'identifier les commits, et pour ça on a plusieurs manières:
    - votre commit courant s'appelle `HEAD`
-   - un commit peut être référencé par une branche (dans notre cas la branche `master`)
+   - un commit peut être référencé par une branche (dans notre cas la branche `main`)
    - un commit a un identificateur unique: son `sha-1`
 
 En supplément de ces manières, `git` propose des mécanismes permettant de "*naviguer*" dans le graphe de commits avec `~` et `^`.
@@ -1158,14 +1158,14 @@ Ainsi par exemple, `HEAD` est le commit courant:
    - `HEAD~` est le premier parent de `HEAD`; donc l'avant dernier commit
    - `HEAD~2` est le premier parent du premier parent de `HEAD`
    
-On peut utiliser `~` avec n'importe quelle référence, par exemple `master~`, ou `18b63f5~` si vous avez un SHA-1 qui vaut `18b63f5`.   
+On peut utiliser `~` avec n'importe quelle référence, par exemple `main~`, ou `18b63f5~` si vous avez un SHA-1 qui vaut `18b63f5`.   
 
 +++
 
 Prenons, comme exemple, les commits de `my-first-project`:
 ```bash
 $ git lg
-* afec18a (HEAD -> master) une implémentation plus juste de la fonction factorielle
+* afec18a (HEAD -> main) une implémentation plus juste de la fonction factorielle
 * e2c02ca première implémentation de factorielle dans le fichier fact.py
 * 31c4816 informations sur la licence
 * 01b0604 licence+readme
@@ -1173,7 +1173,7 @@ $ git lg
 
 * `HEAD` est donc le dernier commit (afec18a)
 * `HEAD~` est l'avant dernier commit (e2c02ca)
-* `master~2` est l'avant-avant dernier commit (31c4816)
+* `main~2` est l'avant-avant dernier commit (31c4816)
 * `e2c02ca~` est aussi l'avant-avant dernier commit (31c4816)
 * ...
 
@@ -1187,9 +1187,9 @@ Entrainez-vous à utiliser ce mécanisme en conjonction avec `git log`
 
     git log --oneline HEAD
     git log --oneline HEAD~
-    git log --oneline master~2
+    git log --oneline main~2
 
-Vous remarquez que lorsqu'on passe, à `git log`, l'avant-avant-dernier commit (`git log --oneline master~2` ou `git log --oneline HEAD~2`), on ne nous montre plus **que deux commits** ! Pas de panique, le repo n'a pas changé, il contient toujours vos 4 commits.
+Vous remarquez que lorsqu'on passe, à `git log`, l'avant-avant-dernier commit (`git log --oneline main~2` ou `git log --oneline HEAD~2`), on ne nous montre plus **que deux commits** ! Pas de panique, le repo n'a pas changé, il contient toujours vos 4 commits.
 
 **Mais** comme on indique à `git log` de parcourir de repo en commençant par le deuxième commit, eh bien comme corollaire de ce qu'on a vu plus haut (avec le graphe de parent et comment il est orienté), ce parcours-là ne peut découvrir que 2 commits.
 
@@ -1259,14 +1259,14 @@ La commande `git branch` permet de lister, créer, détruire des branches
 
 ```bash
 $ git branch
-* master
+* main
 ```
 
 <img src="media/git-branch.png" width=200>
 
 +++
 
-On n'a qu'une branche, `master`, et en face de son nom **il y a une `*`** car c'est **la branche courante**.  Pour en créer une autre (qu'on va appeler `devel` car c'est une tradition fréquente)  on va utiliser une autre forme de `git branch`, on lui passe: 
+On n'a qu'une branche, `main`, et en face de son nom **il y a une `*`** car c'est **la branche courante**.  Pour en créer une autre (qu'on va appeler `devel` car c'est une tradition fréquente)  on va utiliser une autre forme de `git branch`, on lui passe: 
 * le nom de la branche
 * et le commit où veut poser la branche.  
  (faites `git branch --help` pour voir les détails). 
@@ -1277,7 +1277,7 @@ Du coup pour créer la branche `devel` sur le parent de `HEAD` on peut écrire
 $ git branch devel HEAD~
 $ git branch
   devel
-* master
+* main
 ```
 
 <img src="media/git-branch-devel.png" width=250>
@@ -1288,14 +1288,14 @@ qu'est-ce qui a changé ? pas grand-chose à ce stade, on remarque juste l'étiq
 
 ```bash
 $ git log --oneline --all
-afec18a (HEAD -> master) une implémentation plus juste de la fonction factorielle
+afec18a (HEAD -> main) une implémentation plus juste de la fonction factorielle
 e2c02ca (devel) première implémentation de factorielle dans le fichier fact.py
 31c4816 informations sur la licence
 01b0604 licence+readme
 ```
 
 
-<img src="media/git-head-master-devel.png" width=600>
+<img src="media/git-head-main-devel.png" width=600>
 
 mais dans votre répertoire, le contenu de nos fichiers, dans notre espace de travail, est resté inchangé:
 ```bash
@@ -1341,7 +1341,7 @@ AVANT
 
 ```bash
 $ git log --oneline --graph --all
-* afec18a (HEAD -> master) une implémentation plus juste de la fonction factorielle
+* afec18a (HEAD -> main) une implémentation plus juste de la fonction factorielle
 * e2c02ca (devel) première implémentation de factorielle dans le fichier fact.py
 * 31c4816 informations sur la licence
 * 01b0604 licence+readme
@@ -1372,10 +1372,10 @@ def fact (n):
 
 $ git branch
 * devel
-  master
+  main
 
 $ git log --oneline --graph --all
-* afec18a (master) une implémentation plus juste de la fonction factorielle
+* afec18a (main) une implémentation plus juste de la fonction factorielle
 * e2c02ca (HEAD -> devel) première implémentation de factorielle dans le fichier fact.py
 * 31c4816 informations sur la licence
 * 01b0604 licence+readme
@@ -1446,7 +1446,7 @@ pour ma part j'ai mis `licence CC` comme message de commit, et voici ce que j'ob
 ```bash
 $ git log --all --oneline --graph
 * bda7835 (HEAD -> devel) licence CC
-| * afec18a (master) une implémentation plus juste de la fonction factorielle
+| * afec18a (main) une implémentation plus juste de la fonction factorielle
 |/
 * e2c02ca première implémentation de factorielle dans le fichier fact.py
 * 31c4816 informations sur la licence
@@ -1512,16 +1512,16 @@ nothing to commit, working tree clean
 
 +++
 
-Si nous voulons fusionner `devel` avec `master`:   
-nous allons utiliser la commande `git merge master`, mais avant de la taper, lisez pour bien comprendre ce que ca va faire:
+Si nous voulons fusionner `devel` avec `main`:   
+nous allons utiliser la commande `git merge main`, mais avant de la taper, lisez pour bien comprendre ce que ca va faire:
 
 * on **crée un nouveau commit**
 * parce que le commit est produit par un `merge`, il va **avoir deux parents**  
   le premier est le commit courant `HEAD` (*aka* `devel`),   
-  le second est (celui référencé par) `master`
+  le second est (celui référencé par) `main`
 * puisque `devel` est la branche courante, le nouveau commit sera désigné par `devel`
   et donc **`devel` va avancer d'un cran**
-* et `master` qui n'est pas la branche courante reste sur place
+* et `main` qui n'est pas la branche courante reste sur place
 
 Donc toujours avant de taper la commande, pouvez-vous imaginer à quoi va ressembler la sortie de `git log` après le merge ?
 
@@ -1533,7 +1533,7 @@ une fois que vous avez bien réfléchi, voici la réponse :
 # en fait puisque git merge produit un commit
 # il faut lui passer un message
 
-$ git merge master -m"mon premier merge"
+$ git merge main -m"mon premier merge"
 Merge made by the 'recursive' strategy.
  fact.py | 5 ++++-
  1 file changed, 4 insertions(+), 1 deletion(-)
@@ -1541,7 +1541,7 @@ Merge made by the 'recursive' strategy.
 $ git log --all --oneline --graph
 *   725be46 (HEAD -> devel) mon premier merge
 |\
-| * afec18a (master) une implémentation plus juste de la fonction factorielle
+| * afec18a (main) une implémentation plus juste de la fonction factorielle
 * | bda7835 licence CC
 |/
 * e2c02ca première implémentation de factorielle dans le fichier fact.py
@@ -1553,13 +1553,13 @@ $ git log --all --oneline --graph
 
 +++
 
-Regardons la différence entre `devel` et `master`
+Regardons la différence entre `devel` et `main`
 
 ```bash
-git diff devel master
+git diff devel main
 ```
 
-<img src="media/git-diff-devel-master.png" width=450>
+<img src="media/git-diff-devel-main.png" width=450>
 
 +++ {"tags": ["level_intermediate"]}
 

@@ -20,7 +20,7 @@ lorsque deux branches modifient **la même ligne de code**, alors au moment de l
     le code de la branche courante
     =======
     le code de la branche qu'on fusionne
-    >>>>>>> origin/master
+    >>>>>>> origin/main
     ```
 
 

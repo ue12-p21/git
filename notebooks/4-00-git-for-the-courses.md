@@ -158,7 +158,7 @@ comment les résoudre:
     votre code
     =======
     le code distant
-    >>>>>>> origin/master
+    >>>>>>> origin/main
     ```
 * vous devez alors choisir le code final que vous gardez (soit en ne laissant
   qu'un seul des deux blocs dans le fichier, soit en faisant un mixte des deux);

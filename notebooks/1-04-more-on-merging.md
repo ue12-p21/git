@@ -66,11 +66,11 @@ une fusion *fast-forward*, c'est le cas où **le commit courant est déjà un pa
 
 <img src="media/merge-fast-forward.png" width="400px">
 
-* la branche courante est `master`, on fusionne avec le commit `devel`
-* on cherche donc à créer un commit qui contienne à la fois de code de `master` et de `devel`
+* la branche courante est `main`, on fusionne avec le commit `devel`
+* on cherche donc à créer un commit qui contienne à la fois de code de `main` et de `devel`
 * mais, attendez : le commit `A` est un parent de `C`  
 * et donc par définition `C` **vérifie déjà la bonne propriété** 
-  * `C` contient master (qui est un de ses parents)
+  * `C` contient main (qui est un de ses parents)
   * `C` contient `devel` (c'est `devel`)
   
 et du coup dans ce cas de figure, la fusion **n'a même pas besoin de créer un commit**  
@@ -176,7 +176,7 @@ git commit -m"le formulaire vierge"
 ce qu'on veut faire, c'est simuler deux changements faits en même temps par deux personnes différentes; disons qu'on a deux profs, Minerva McGonagall et Albus Dumbledore, qui remplissent chacun leur partie
 
 pour simplifier on va dire que 
-* McGonagall utilise la branche `master`, et 
+* McGonagall utilise la branche `main`, et 
 * Dumbledore utilise une branche `dumbledore`
 
 Ils partent donc tous les deux du formulaire vide, ils remplissent chacun leur partie au mieux, et leurs versions respectives du fichier sont
@@ -201,7 +201,7 @@ Ils partent donc tous les deux du formulaire vide, ils remplissent chacun leur p
 
 sauriez-vous simuler ce scénario ? 
 
-pour McGonagall, c'est simple, comme on est sur master il suffit de modifier `form.txt` (1ère version, note 12) et de commiter
+pour McGonagall, c'est simple, comme on est sur main il suffit de modifier `form.txt` (1ère version, note 12) et de commiter
 
 ```bash
 cp form-mcdonagall.txt
@@ -256,14 +256,14 @@ $ git log --all --graph --oneline
 
 à ce stade on a le choix :
 
-1. de se mettre sur `master` et de fusionner `dumbledore`
-1. ou l'inverse, rester sur `dumbledore`, et fusionner `master`
+1. de se mettre sur `main` et de fusionner `dumbledore`
+1. ou l'inverse, rester sur `dumbledore`, et fusionner `main`
 
-c'est relativement équivalent, mais en général on préfère se mettre sur `master`, et c'est ce qu'on va faire ici
+c'est relativement équivalent, mais en général on préfère se mettre sur `main`, et c'est ce qu'on va faire ici
 
 ```bash
-$ git switch master
-Switched to branch 'master'
+$ git switch main
+Switched to branch 'main'
 ```
 
 +++ {"tags": ["level_intermediate"]}
@@ -298,7 +298,7 @@ dans quel état est notre dépôt à ce stade ?
 * `git status` nous dit ceci
   ```console
   $ git status
-  On branch master
+  On branch main
   You have unmerged paths.
     (fix conflicts and run "git commit")
     (use "git merge --abort" to abort the merge)
@@ -333,7 +333,7 @@ pour cela, on a principalement deux choix :
   ```bash
   $ git merge --abort
   $ git status
-  On branch master
+  On branch main
   nothing to commit, working tree clean
   ```
   ouf, on a **tout effacé**, on est exactement **comme avant le merge**
@@ -378,7 +378,7 @@ la mauvaise nouvelle, c'est qu'aucune des deux ne convient, et ce qu'on va faire
 * et tout le monde est content
   ```console
   git log --oneline --graph
-  *   4e94d65 (HEAD -> master) fusion après conflit résolu à la main
+  *   4e94d65 (HEAD -> main) fusion après conflit résolu à la main
   |\
   | * 065c80e (dumbledore) notes dumbledore
   * | 975505c notes mcgonagall
@@ -388,7 +388,7 @@ la mauvaise nouvelle, c'est qu'aucune des deux ne convient, et ce qu'on va faire
   et
   ```console
   git status
-  On branch master
+  On branch main
   nothing to commit, working tree clean  git log --
   ```
   et

@@ -33,7 +33,7 @@ nbhosting:
 avant de commencer le cours, faisons le point sur la configuration
 
 c'est **très important** de bien **suivre toutes ces consignes**, 
-ou alors vous risquez de sérieusement galérer plus tard
+ou alors vous risquez de sérieusement galérer plus tard…
 
 +++
 
@@ -75,10 +75,20 @@ lorsque vous faites par exemple `git commit` et que l'éditeur se lance pour vou
 et pour lui dire "ça y est, j'ai fini, on peut finir le commit", ce que vous devez faire, c'est simplement de
 ***fermer l'onglet qui édite le message***   
 il ne suffit pas de simplement sauver le fichier (c'est nécessaire bien sûr, mais pas suffisant)  
-et dans l'autre sens ce n'est pas non plus la peine de terminer toute votre sessions vs-code (vous pouvez avoir plein d'autres fichiers ouverts à ce moment-là dans vs-code)
+et dans l'autre sens ce n'est pas non plus la peine de terminer toute votre session vs-code (vous pouvez avoir plein d'autres fichiers ouverts à ce moment-là dans vs-code)
 
 **note**  
 pour que ça fonctionne, il faut que la commande `code` soit bien installée dans votre PATH; si vous avez `command not found` quand vous tapez `code .` dans votre terminal, allez dans vs-code, ouvrez la palette et cherchez `Shell Command: Install 'code' command in PATH`
+
++++
+
+## la branche par défaut
+
+pour que `git init` crée une branche qui s'appelle `main` et pas `master` (qui était le défaut il y a quelques années)
+
+```bash
+git config --global init.defaultbranch main
+```
 
 +++
 
@@ -169,8 +179,8 @@ qui ne fonctionnera pas si votre clé n'est pas correctement reconnue
 
 pour les curieux, il y a deux niveaux de configuration
 
-1. limité au repo courant
-1. ou au contraire valable pour tous les repos
+1. `local`, limité au repo courant
+1. ou `global`, au contraire valable pour tous les repos
 
 il y a une commande `git config` qui permet d'inspecter la configuration  
 par défaut on regarde ou change la première famille  

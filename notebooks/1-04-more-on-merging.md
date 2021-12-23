@@ -21,8 +21,8 @@ nbhosting:
 </div>
 </div>
 
-<img src="media/inria-25-alpha.png" />
-<img src="media/ensmp-25-alpha.png" />
+<img src="media/inria-25-alpha.png">
+<img src="media/ensmp-25-alpha.png">
 
 +++
 
@@ -282,7 +282,7 @@ ouh là, il n'a pas l'air content !
 
 ce qui se passe, c'est ceci
 
-<img src="media/merge-conflict.png" width="600px" />
+<img src="media/merge-conflict.png" width="600px">
 
 * les changements faits dans la zone "chacun chez soi" peut être fusionnés sans souci
 * par contre comme les deux branches ont modifié la ligne de total chacune de leur côté  

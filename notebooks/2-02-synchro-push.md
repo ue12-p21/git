@@ -21,8 +21,8 @@ nbhosting:
 </div>
 </div>
 
-<img src="media/inria-25-alpha.png" />
-<img src="media/ensmp-25-alpha.png" />
+<img src="media/inria-25-alpha.png">
+<img src="media/ensmp-25-alpha.png">
 
 +++
 

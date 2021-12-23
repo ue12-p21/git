@@ -21,8 +21,8 @@ nbhosting:
 </div>
 </div>
 
-<img src="media/inria-25-alpha.png" />
-<img src="media/ensmp-25-alpha.png" />
+<img src="media/inria-25-alpha.png">
+<img src="media/ensmp-25-alpha.png">
 
 +++
 
@@ -149,7 +149,8 @@ qui ouvre un sous-menu dans lequel vous choisissez *Settings*
 dans la partie gauche de la page qui s'ouvre, cliques 'SSH and GPG Keys'  
 et vous ajoutez une clé SSH; mettez ce que vous voulez comme titre, mais vous collez la clé publique dans la zone qui va bien
 
-<img src="media/github-profile-1.png" width="60%"><img src="media/github-profile-2.png" width="60%">
+<img src="media/github-profile-1.png" width="60%">
+<img src="media/github-profile-2.png" width="60%">
 
 +++
 

@@ -21,8 +21,8 @@ nbhosting:
 </div>
 </div>
 
-<img src="media/inria-25-alpha.png" />
-<img src="media/ensmp-25-alpha.png" />
+<img src="media/inria-25-alpha.png">
+<img src="media/ensmp-25-alpha.png">
 
 +++
 
@@ -139,7 +139,7 @@ $ ls
 
 ```
 
-<img src='media/terminal-mkdir-cd-ls.png' width=300>
+<img src='media/terminal-mkdir-cd-ls.png' width="300px">
 
 +++
 
@@ -182,7 +182,7 @@ total 8
 4 -rw-r--r-- 1 vr vr 77 Sep  5 14:46 readme.md
 ```
 
-<img src='media/terminal-echo.png' width=800>
+<img src='media/terminal-echo.png' width="800px">
 
 +++
 
@@ -238,7 +238,7 @@ Comme pour toutes les commandes du système, de très nombreuses options sont di
 git init --help
 ```
 
-<img src='media/git-init-help.png' width=800>
+<img src='media/git-init-help.png' width="800px">
 
 +++ {"tags": ["level_intermediate"]}
 
@@ -279,7 +279,7 @@ Reprenons; maintenant si nous voulons voir où on en est de notre tout nouveau d
 git status
 ```
 
-<img src="./media/git-status-init.png" width=600>
+<img src="./media/git-status-init.png" width="600px">
 
 +++
 
@@ -342,7 +342,7 @@ git add readme.md
 
 Que vous dit `git` ? Rien ! Il n'est pas très locace. Comment pouvons nous voir ce qui s'est passé ? oui en demandant le statut du repo avec `git status` !! Alors voilà j'ai vraiment besoin d'une copie d'écran, les couleurs sont très importantes:
 
-<img src='media/git-status-simple.png' width=600>
+<img src='media/git-status-simple.png' width="600px">
 
 Voilà, maintenant `git status` vous montre
 * le fichier `readme.md` en **vert** dans la partie des **modifications qui seront committées**,
@@ -366,7 +366,7 @@ vous devez voir :
 * que les deux fichiers fichiers apparaissent maintenant en vert dans la section *Changes to be committed*
 * et enfin qu'il n'y a plus de *untracked files*
 
-<img src="media/git-status-vert.png" width=400>
+<img src="media/git-status-vert.png" width="400px">
 
 +++
 
@@ -412,7 +412,7 @@ $ git commit -m"licence+readme"
  create mode 100644 readme.md
 ```
 
-<img src="media/git-first-commit.png" width=500>
+<img src="media/git-first-commit.png" width="500px">
 
 +++
 
@@ -551,7 +551,7 @@ Faisons `git status` afin de comprendre
 git status
 ```
 
-<img src='media/git-status-states-tracked-files.png' width=600>
+<img src='media/git-status-states-tracked-files.png' width="600px">
 
 +++
 
@@ -566,7 +566,7 @@ Nous voyons là les trois états des **fichiers** de notre répertoire courant:
 
 Nous pouvons maintenant décrire les **3 morceaux** de notre répertoire git:
 
-<img src='media/repo-contents-3-add-index-commit.png' width=800>
+<img src='media/repo-contents-3-add-index-commit.png' width="800px">
 
    - l'`espace de travail` avec tous les fichiers au sens usuel (ce que vous voyez dans l'explorateur de fichiers et dans votre éditeur de code), qui peuvent contenir un certain nombre de modifications par rapport au dernier commit
    - l'`index` (ou `stage`) dans lequel on ajoute - avec `add` - certaines de ces modifications - et pas forcément toutes; l'index sert à préparer le prochain commit; dit autrement, quand on crée un commit, on fait un snapshot de ce qu'il y a dans l'index;
@@ -707,7 +707,7 @@ Signalons tout de suite une présentation qui sera plus pratique, où chaque com
 git log --oneline
 ```
 
-<img src="media/git-log-oneline.png" width=400>
+<img src="media/git-log-oneline.png" width="400px">
 
 +++
 
@@ -944,7 +944,7 @@ Regardons maintenant la sortie de `git diff` sur `fact.py`, qui a été **modifi
 git diff fact.py
 ```
 
-<img src='media/git-diff-simple.png' width=300>
+<img src='media/git-diff-simple.png' width="300px">
 
 La sortie de `git diff` contient
    - en **- rouge** les lignes supprimées (ici `pass`)
@@ -982,7 +982,7 @@ Le `diff` entre l'`index` et le commit courant montre les différences:
 git diff --cached fact.py
 ```
 
-<img src='media/git-diff-index-commitc.png' width=300>
+<img src='media/git-diff-index-commitc.png' width="300px">
 
 La situation est exactement l'inverse que tout à l'heure :
 * il n'y a plus à présent de différences entre le fichier et l'index
@@ -1086,7 +1086,7 @@ $ git log --oneline --graph
 
 Alors pour l'instant ça ne fait que d'ajouter une petite étoile sur le coté gauche, mais c'est ça qui nous permettra de bien suivre les branches lorsqu'on en verra ! (*Notons qu'entre une figure et une autre, les `sha-1` peuvent ne pas être cohérents: les figures proviennent de plusieurs essais de repos).*
 
-<img src="./media/git-log-graph.png" width=600>
+<img src="./media/git-log-graph.png" width="600px">
 
 +++
 
@@ -1105,7 +1105,7 @@ Du coup c'est plus rapide à utiliser:
 git lg
 ```
 
-<img src="media/git-alias-oneline-graph.png" width=600>
+<img src="media/git-alias-oneline-graph.png" width="600px">
 
 +++
 
@@ -1262,7 +1262,7 @@ $ git branch
 * main
 ```
 
-<img src="media/git-branch.png" width=200>
+<img src="media/git-branch.png" width="200px">
 
 +++
 
@@ -1280,7 +1280,7 @@ $ git branch
 * main
 ```
 
-<img src="media/git-branch-devel.png" width=250>
+<img src="media/git-branch-devel.png" width="250px">
 
 +++
 
@@ -1295,7 +1295,7 @@ e2c02ca (devel) première implémentation de factorielle dans le fichier fact.py
 ```
 
 
-<img src="media/git-head-main-devel.png" width=600>
+<img src="media/git-head-main-devel.png" width="600px">
 
 mais dans votre répertoire, le contenu de nos fichiers, dans notre espace de travail, est resté inchangé:
 ```bash
@@ -1354,7 +1354,7 @@ def fact (n):
     pass
 ```
 
-<img src="media/git-avant.png" width=600>
+<img src="media/git-avant.png" width="600px">
 
 
 ON LE FAIT
@@ -1382,7 +1382,7 @@ $ git log --oneline --graph --all
 ```
 
 
-<img src="media/git-apres.png" width=600>
+<img src="media/git-apres.png" width="600px">
 
 +++
 
@@ -1453,7 +1453,7 @@ $ git log --all --oneline --graph
 * 01b0604 licence+readme
 ```
 
-<img src="media/git-licenceCC.png" width=600>
+<img src="media/git-licenceCC.png" width="600px">
 
 +++
 
@@ -1476,7 +1476,7 @@ exercice: on enleve le `--all` de la commande. Que remarquez vous ?
 
 d'après vous, pourquoi ça se comporte comme ça ?
 
-<img src="media/git-no-all.png" width=600>
+<img src="media/git-no-all.png" width="600px">
 
 +++
 
@@ -1549,7 +1549,7 @@ $ git log --all --oneline --graph
 * 01b0604 licence+readme
 ```
 
-<img src="media/git-first-merge.png" width=600>
+<img src="media/git-first-merge.png" width="600px">
 
 +++
 
@@ -1559,7 +1559,7 @@ Regardons la différence entre `devel` et `main`
 git diff devel main
 ```
 
-<img src="media/git-diff-devel-main.png" width=450>
+<img src="media/git-diff-devel-main.png" width="450px">
 
 +++ {"tags": ["level_intermediate"]}
 
@@ -1599,4 +1599,4 @@ voir le notebook suivant, qui contient
 
 Et pour conclure ...
 
-<img src='media/git-xkcd.png' width=300>
+<img src='media/git-xkcd.png' width="300px">

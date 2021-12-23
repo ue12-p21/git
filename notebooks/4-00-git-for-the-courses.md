@@ -19,7 +19,7 @@ nbhosting:
 <span>Thierry Parmentelat</span>
 </div>
 
-<img src="../notebooks/media/inria-25-alpha.png" />
+<img src="../notebooks/media/inria-25-alpha.png">
 
 +++
 
@@ -65,7 +65,7 @@ expliqué ici](0-00-setup.md)
   ```
   pour trouver la bonne URL, regardez comment on fait dans la vidéo  
   en faisant bien attention de choisir le mode `SSH` comme ceci:  
-  <img src="media/github-choose-ssh.png" width=400px>
+  <img src="media/github-choose-ssh.png" width="400px">
 * un dossier va être créé, ici il s'appelle `python-numerique`  
   (si vous préférez un autre nom, ajoutez le à la commande ci-dessus)
 * dans le dossier choisi, vous allez trouver tout le contenu du cours, y compris

@@ -21,8 +21,8 @@ nbhosting:
 </div>
 </div>
 
-<img src="media/inria-25-alpha.png" />
-<img src="media/ensmp-25-alpha.png" />
+<img src="media/inria-25-alpha.png">
+<img src="media/ensmp-25-alpha.png">
 
 +++
 
@@ -88,7 +88,7 @@ notons que `git` permet de travailler sur plusieurs branches *en parallèle*: ai
 * **l'index** : la zone tampon dont on se sert pour préparer le prochain commit
 * **espace de travail**, ou encore plus simplement **fichiers** : au sens usuel, les dossiers et fichiers qu'on voit dans l'explorateur de fichiers et l'éditeur de code
 
-<img src='media/repo-contents-3-add-index-commit.png' width=800>
+<img src='media/repo-contents-3-add-index-commit.png' width="800px">
 
 +++
 

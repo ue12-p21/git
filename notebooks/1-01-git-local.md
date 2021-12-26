@@ -139,7 +139,7 @@ $ ls
 
 ```
 
-<img src='media/term-mkdir-cd-ls.png' width="300px">
+<img src='media/term-mkdir-cd-ls.png' width="500px">
 
 +++
 
@@ -279,7 +279,7 @@ Reprenons; maintenant si nous voulons voir où on en est de notre tout nouveau d
 git status
 ```
 
-<img src="media/term-status-red.png" width="600px">
+<img src="media/term-status-red.png">
 
 +++
 
@@ -342,7 +342,7 @@ git add readme.md
 
 Que vous dit `git` ? Rien ! Il n'est pas très locace. Comment pouvons nous voir ce qui s'est passé ? oui en demandant le statut du repo avec `git status` !! Alors voilà j'ai vraiment besoin d'une copie d'écran, les couleurs sont très importantes:
 
-<img src="media/term-status-green-red.png" width="600px">
+<img src="media/term-status-green-red.png">
 
 Voilà, maintenant `git status` vous montre
 * le fichier `readme.md` en **vert** dans la partie des **modifications qui seront committées**,
@@ -366,7 +366,7 @@ vous devez voir :
 * que les deux fichiers fichiers apparaissent maintenant en vert dans la section *Changes to be committed*
 * et enfin qu'il n'y a plus de *untracked files*
 
-<img src="media/term-status-green.png" width="400px">
+<img src="media/term-status-green.png">
 
 +++
 
@@ -412,7 +412,7 @@ $ git commit -m"licence+readme"
  create mode 100644 readme.md
 ```
 
-<img src="media/term-first-commit.png" width="500px">
+<img src="media/term-first-commit.png">
 
 +++
 
@@ -551,7 +551,7 @@ Faisons `git status` afin de comprendre
 git status
 ```
 
-<img src="media/term-status-tracked-files.png" width="600px">
+<img src="media/term-status-tracked-files.png">
 
 +++
 
@@ -618,7 +618,7 @@ grâce à l'index on peut choisir quels changements mettre ou pas dans le commit
 
 +++
 
-## deuxième commit 
+## deuxième commit
 
 +++
 
@@ -707,7 +707,7 @@ Signalons tout de suite une présentation qui sera plus pratique, où chaque com
 git log --oneline
 ```
 
-<img src="media/term-log-oneline.png" width="400px">
+<img src="media/term-log-oneline.png" width="500px">
 
 +++
 
@@ -944,7 +944,7 @@ Regardons maintenant la sortie de `git diff` sur `fact.py`, qui a été **modifi
 git diff fact.py
 ```
 
-<img src="media/term-diff.png" width="300px">
+<img src="media/term-diff.png" width="400px">
 
 La sortie de `git diff` contient
    - en **- rouge** les lignes supprimées (ici `pass`)
@@ -982,7 +982,7 @@ Le `diff` entre l'`index` et le commit courant montre les différences:
 git diff --cached fact.py
 ```
 
-<img src="media/term-diff-cached.png" width="300px">
+<img src="media/term-diff-cached.png" width="400px">
 
 La situation est exactement l'inverse que tout à l'heure :
 * il n'y a plus à présent de différences entre le fichier et l'index
@@ -1158,7 +1158,7 @@ Ainsi par exemple, `HEAD` est le commit courant:
    - `HEAD~` est le premier parent de `HEAD`; donc l'avant dernier commit
    - `HEAD~2` est le premier parent du premier parent de `HEAD`
    
-On peut utiliser `~` avec n'importe quelle référence, par exemple `main~`, ou `18b63f5~` si vous avez un SHA-1 qui vaut `18b63f5`.   
+On peut utiliser `~` avec n'importe quelle référence, par exemple `main~`, ou `18b63f5~` si vous avez un SHA-1 qui vaut `18b63f5`.
 
 +++
 
@@ -1262,7 +1262,7 @@ $ git branch
 * main
 ```
 
-<img src="media/term-branch.png" width="200px">
+<img src="media/term-branch.png" width="400px">
 
 +++
 
@@ -1280,7 +1280,7 @@ $ git branch
 * main
 ```
 
-<img src="media/term-branch-devel.png" width="250px">
+<img src="media/term-branch-devel.png" width="400px">
 
 +++
 
@@ -1295,7 +1295,7 @@ e2c02ca (devel) première implémentation de factorielle dans le fichier fact.py
 ```
 
 
-<img src="media/term-head-main-devel.png" width="600px">
+<img src="media/term-head-main-devel.png">
 
 mais dans votre répertoire, le contenu de nos fichiers, dans notre espace de travail, est resté inchangé:
 ```bash
@@ -1354,7 +1354,7 @@ def fact (n):
     pass
 ```
 
-<img src="media/term-before-ff-merge.png" width="600px">
+<img src="media/term-before-ff-merge.png">
 
 
 ON LE FAIT
@@ -1382,7 +1382,7 @@ $ git log --oneline --graph --all
 ```
 
 
-<img src="media/term-after-ff-merge.png" width="600px">
+<img src="media/term-after-ff-merge.png">
 
 +++
 
@@ -1453,7 +1453,7 @@ $ git log --all --oneline --graph
 * 01b0604 licence+readme
 ```
 
-<img src="media/term-log-fork-all.png" width="600px">
+<img src="media/term-log-fork-all.png">
 
 +++
 
@@ -1476,7 +1476,7 @@ exercice: on enleve le `--all` de la commande. Que remarquez vous ?
 
 d'après vous, pourquoi ça se comporte comme ça ?
 
-<img src="media/term-log-fork.png" width="600px">
+<img src="media/term-log-fork.png">
 
 +++
 
@@ -1559,7 +1559,7 @@ Regardons la différence entre `devel` et `main`
 git diff devel main
 ```
 
-<img src="media/term-diff-devel-main.png" width="450px">
+<img src="media/term-diff-devel-main.png" width="600px">
 
 +++ {"tags": ["level_intermediate"]}
 

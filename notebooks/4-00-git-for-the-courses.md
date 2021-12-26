@@ -19,7 +19,7 @@ nbhosting:
 <span>Thierry Parmentelat</span>
 </div>
 
-<img src="../notebooks/media/inria-25-alpha.png">
+<img src="media/inria-25-alpha.png">
 
 +++
 

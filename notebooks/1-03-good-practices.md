@@ -171,3 +171,12 @@ Pour information, on peut faire ce genre de choses également à partir d'outils
 +++
 
 <video width="800px" controls src="media/sourcetree-line-by-line.mp4" type="video/mp4"></video>
+
++++
+
+***
+
+et pour finir voice ce que xkcd a à dire sur les messages de commit ;)  
+(il les représente dans l'autre sens, les derniers en bas...)
+
+<img src="media/xkcd-git-commit.png" width="60%">

@@ -62,7 +62,7 @@ dans un premier temps on revoit, sous une forme visuelle, les commandes qu'on a 
 
 on utilisera ce type de présentation dans la suite :
 
-![](media/lifecycle-1-clean.png)
+![](media/kn-lifecycle-1-clean.png)
 
 +++
 
@@ -70,13 +70,13 @@ on utilisera ce type de présentation dans la suite :
 
 en général le dépôt n'est pas propre, on peut voir les (deux familles de) différences avec ces 2 commandes
 
-![](media/lifecycle-2-status-diff.png)
+![](media/kn-lifecycle-2-status-diff.png)
 
 +++
 
 ### j'utilise mon éditeur
 
-![](media/lifecycle-3-editor.png)
+![](media/kn-lifecycle-3-editor.png)
 
 le changement que je sauve δ s'ajoute en fait aux différences existantes, qui s'accumulent évidemment.
 
@@ -84,7 +84,7 @@ le changement que je sauve δ s'ajoute en fait aux différences existantes, qui 
 
 ### `git add`
 
-![](media/lifecycle-4-add.png)
+![](media/kn-lifecycle-4-add.png)
 
 la différence apparait maintenant dans la deuxième zone (*staged changes*)
 
@@ -92,7 +92,7 @@ la différence apparait maintenant dans la deuxième zone (*staged changes*)
 
 ### `git commit`
 
-![](media/lifecycle-5-commit.png)
+![](media/kn-lifecycle-5-commit.png)
 
 on crée le commit sur la base du contenu de l'index, du coup les deux (l'index et le dernier commit) sont maintenant égaux
 
@@ -121,7 +121,7 @@ ou encore, pendant le debug on a ajouté 250 instructions `print()`, qu'on veut 
 
 pour annuler le `add` : si un changement a été promu dans l'index, on peut le déclasser
 
-![](media/lifecycle-6-reset.png)
+![](media/kn-lifecycle-6-reset.png)
 
 +++ {"tags": ["level_intermediate"]}
 
@@ -129,7 +129,7 @@ pour annuler le `add` : si un changement a été promu dans l'index, on peut le
 
 pour jeter les changements non indexés
 
-![](media/lifecycle-7-checkout.png)
+![](media/kn-lifecycle-7-checkout.png)
 
 +++ {"tags": ["level_intermediate"]}
 
@@ -137,7 +137,7 @@ pour jeter les changements non indexés
 
 pour se mettre inconditionnellement sur un commit, avec un dépôt propre
 
-![](media/lifecycle-8-reset-hard.png)
+![](media/kn-lifecycle-8-reset-hard.png)
 
 +++ {"tags": ["level_intermediate"]}
 

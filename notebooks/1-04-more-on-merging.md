@@ -64,7 +64,7 @@ on rappelle aussi d'ailleurs, dans un autre registre, qu'il est sage de lancer l
 
 une fusion *fast-forward*, c'est le cas où **le commit courant est déjà un parent** (transitivement) de `to-merge`; comme par exemple ici :
 
-<img src="media/merge-fast-forward.png" width="400px">
+<img src="media/kn-merge-fast-forward.png" width="400px">
 
 * la branche courante est `main`, on fusionne avec le commit `devel`
 * on cherche donc à créer un commit qui contienne à la fois de code de `main` et de `devel`
@@ -93,7 +93,7 @@ ici dans le premier exemple on avait `to-merge=C → B → HEAD=A`, donc pas bes
 
 juste pour la curiosité, le cas se présente assez peu en pratique, mais que se passe-t-il d'après vous lorsque dans l'autre sens, on essaie de fusionner un parent ?
 
-<img src="media/merge-anti-fast-forward.png" width="200px">
+<img src="media/kn-merge-anti-fast-forward.png" width="200px">
 
 la réponse : rien du tout ! pourquoi ?
 
@@ -282,7 +282,7 @@ ouh là, il n'a pas l'air content !
 
 ce qui se passe, c'est ceci
 
-<img src="media/merge-conflict.png" width="600px">
+<img src="media/kn-merge-conflict.png" width="600px">
 
 * les changements faits dans la zone "chacun chez soi" peut être fusionnés sans souci
 * par contre comme les deux branches ont modifié la ligne de total chacune de leur côté  
@@ -349,13 +349,13 @@ faisons-le; nous ici on veut dire que le total, ça n'est ni 12 ni 15, mais 27
 
 pour résoudre le conflit, on doit utiliser un éditeur de code; dans vs-code par exemple on verrait ceci
 
-![](media/vs-code-conflict.png)
+![](media/vscode-conflict.png)
 
 la bonne nouvelle, c'est qu'il a détecté la présence d'un conflit; il nous propose même des options toutes faites (*Accept current change*…) pour choisir l'une ou l'autre des deux versions
 
 la mauvaise nouvelle, c'est qu'aucune des deux ne convient, et ce qu'on va faire simplement c'est d'écrire la ligne comme elle doit être, et en enlevant toutes les annotations à base de `>>>` ou `<<<` ou `===`; ça donne ceci
 
-![](media/vs-code-conflict-solved.png)
+![](media/vscode-conflict-solved.png)
 
 +++ {"tags": ["level_intermediate"]}
 

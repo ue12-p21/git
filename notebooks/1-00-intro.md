@@ -29,7 +29,7 @@ nbhosting:
 
 ## un survol en slides
 
-Pour les néophytes, [voici un slideshow](media/introduction-git.pdf) pour illustrer rapidement **le besoin**, et **les cas d'usage** les plus simples; [accessible aussi ici](https://github.com/ue12-p21/git/raw/main/notebooks/media/introduction-git.pdf)
+Pour les néophytes, [voici un slideshow](media/kn2-introduction-git.pdf) pour illustrer rapidement **le besoin**, et **les cas d'usage** les plus simples; [accessible aussi ici](https://github.com/ue12-p21/git/raw/main/notebooks/media/introduction-git.pdf)
 
 la présentation contient des animations, assurez-vous de bien la visionner en mode slideshow  
 durée : grand maximum 10', il ne s'agit **pas de tout comprendre** mais juste de brosser le contexte

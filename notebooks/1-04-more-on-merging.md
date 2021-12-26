@@ -184,7 +184,6 @@ Ils partent donc tous les deux du formulaire vide, ils remplissent chacun leur p
 ```{code-cell}
 :cell_style: split
 :tags: [level_intermediate]
-:trusted: true
 
 !cat form-mcgonagall.txt
 ```
@@ -192,7 +191,6 @@ Ils partent donc tous les deux du formulaire vide, ils remplissent chacun leur p
 ```{code-cell}
 :cell_style: split
 :tags: [level_intermediate]
-:trusted: true
 
 !cat form-dumbledore.txt
 ```

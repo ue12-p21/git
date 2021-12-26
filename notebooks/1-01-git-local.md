@@ -1354,7 +1354,7 @@ def fact (n):
     pass
 ```
 
-<img src="media/term-before-ff-merge.png">
+<img src="media/term-before-switch.png">
 
 
 ON LE FAIT
@@ -1382,7 +1382,7 @@ $ git log --oneline --graph --all
 ```
 
 
-<img src="media/term-after-ff-merge.png">
+<img src="media/term-after-switch.png">
 
 +++
 
